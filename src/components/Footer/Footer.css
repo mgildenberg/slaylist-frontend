@@ -14,3 +14,7 @@
   overflow: hidden;
   width: 100%;
 }
+
+.footer__content {
+  padding-left: 10px;
+}

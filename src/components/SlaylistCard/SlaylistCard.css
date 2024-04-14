@@ -1,6 +1,14 @@
 .slaylist-card {
-  border: dotted gray 1px;
+  border: solid #afbed1 1px;
   border-radius: 20px;
   width: 100%;
   margin-bottom: 5px;
+}
+
+.slaylist-card:hover {
+  border: solid #4200a6 1px;
+}
+
+.slaylist-card__content {
+  padding-left: 20px;
 }

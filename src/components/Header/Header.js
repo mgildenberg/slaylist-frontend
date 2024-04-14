@@ -6,7 +6,7 @@ import React from "react";
 const Header = () => {
   return (
     <header className="header">
-      Slaylist
+      <div className="header__logo">Slaylist</div>
       <Navigation />
     </header>
   );

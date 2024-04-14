@@ -2,11 +2,12 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  margin-right: 10px;
 }
 
 .nav__button {
   /* border: none; */
-  border: solid #2f71e5 2px;
+  border: solid #4200a6 2px;
   border-radius: 50px;
   /* font-weight: 700; */
   font-size: 15px;
@@ -15,13 +16,13 @@
 }
 
 .nav__button:hover {
-  background-color: #2f71e5;
+  background-color: #4200a6;
   color: white;
 }
 
 .nav__link {
   text-decoration: none;
-  border: solid #2f71e5 2px;
+  border: solid #4200a6 2px;
   border-radius: 50px;
   color: black;
   padding: 10px;
@@ -31,6 +32,6 @@
 }
 
 .nav__link:hover {
-  background-color: #2f71e5;
+  background-color: #4200a6;
   color: white;
 }

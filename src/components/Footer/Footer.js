@@ -4,7 +4,9 @@ import About from "../About/About";
 const Footer = () => {
   return (
     <footer className="footer">
-      <About />
+      <div className="footer__content">
+        <About />
+      </div>
     </footer>
   );
 };
