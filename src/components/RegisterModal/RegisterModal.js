@@ -8,13 +8,6 @@ const RegisterModal = ({
   isLoading,
   onAltClick,
 }) => {
-  const [name, setName] = useState("");
-
-  const handleNameChange = (e) => {
-    // console.log(e.target.value);
-    setName(e.target.value);
-  };
-
   const [email, setEmail] = useState("");
 
   const handleEmailChange = (e) => {
@@ -29,18 +22,17 @@ const RegisterModal = ({
     setPassword(e.target.value);
   };
 
-  const [link, setUrl] = useState("");
+  const [username, setUsername] = useState("");
 
-  const handleUrlChange = (e) => {
+  const handleUsernameChange = (e) => {
     // console.log(e.target.value);
-    setUrl(e.target.value);
+    setUsername(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // onRegistration({ name, weather: radio, imageUrl: link });
-    onRegistration({ email, password, name, avatar: link });
+    onRegistration({ email, password, username });
   };
 
   const handleAltClick = (e) => {
@@ -97,7 +89,7 @@ const RegisterModal = ({
           maxLength="30"
           placeholder="Name"
           value={name}
-          onChange={handleNameChange}
+          onChange={handleUsernameChange}
           required
         />
       </label>
@@ -106,4 +98,3 @@ const RegisterModal = ({
 };
 
 export default RegisterModal;
-// export default withRouter(RegisterModal); // sprint 14 might need to swap to this???
