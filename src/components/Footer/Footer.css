@@ -1,4 +1,16 @@
-.footer {
+/* .footer {
   border: solid gray 1px;
   height: 150px;
+  padding: 20px;
+} */
+
+/* .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; /* Footer height */
+
+.footer {
+  overflow: hidden;
+  width: 100%;
 }
