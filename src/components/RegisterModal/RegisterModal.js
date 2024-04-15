@@ -87,8 +87,8 @@ const RegisterModal = ({
           name="username"
           minLength="1"
           maxLength="30"
-          placeholder="Name"
-          value={name}
+          placeholder="Username"
+          value={username}
           onChange={handleUsernameChange}
           required
         />

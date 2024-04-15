@@ -11,6 +11,7 @@ import LoginModal from "../LoginModal/LoginModal";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleRegisterModal = () => {
     setActiveModal("register");
@@ -73,7 +74,11 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Header />
+            <Header
+              onRegisterModal={handleRegisterModal}
+              onLoginModal={handleLoginModal}
+              isLoggedIn={isLoggedIn}
+            />
             <Main />
           </Route>
         </Switch>
