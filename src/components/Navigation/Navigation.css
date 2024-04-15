@@ -7,24 +7,26 @@
 
 .nav__button {
   /* border: none; */
-  border: solid #4200a6 2px;
+  border: solid #282f6c 2px;
+  background: #282f6c;
   border-radius: 50px;
-  /* font-weight: 700; */
+  color: white; /* font-weight: 700; */
   font-size: 15px;
-  background: none;
   padding: 10px;
 }
 
 .nav__button:hover {
-  background-color: #4200a6;
+  background-color: #c01e58;
+  border: solid #c01e58 2px;
   color: white;
 }
 
 .nav__link {
   text-decoration: none;
-  border: solid #4200a6 2px;
+  border: solid #282f6c 2px;
+  background-color: #282f6c;
   border-radius: 50px;
-  color: black;
+  color: white;
   padding: 10px;
   font-weight: normal;
   /* font-weight: 700; */
@@ -32,6 +34,7 @@
 }
 
 .nav__link:hover {
-  background-color: #4200a6;
+  background-color: #c01e58;
+  border: solid #c01e58 2px;
   color: white;
 }

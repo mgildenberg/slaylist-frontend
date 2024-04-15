@@ -3,6 +3,7 @@
   /* margin: 20px; */
   width: 100%;
   padding-top: 10px;
+  background-color: #090839;
   /* height: 100vh; */
   /* padding-bottom: 2.5rem; */
   /* overflow: hidden;  */
@@ -19,4 +20,5 @@
 
 .main__content {
   padding-left: 10px;
+  color: #d6d9f1;
 }
