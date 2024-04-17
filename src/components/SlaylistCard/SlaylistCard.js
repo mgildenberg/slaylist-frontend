@@ -1,9 +1,9 @@
 import React from "react";
 import "./SlaylistCard.css";
-import topSlaylists from "../../utils/constants";
+// import topSlaylists from "../../utils/constants";
 
 const SlaylistCard = ({ item }) => {
-  console.log(topSlaylists);
+  // console.log(topSlaylists);
   return (
     <div className="slaylist-card">
       <div className="slaylist-card__content">

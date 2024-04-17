@@ -1,3 +1,8 @@
+@font-face {
+  src: url("../../vendor/fonts/Inter-Medium.woff") format("woff");
+  font-family: "Inter Medium";
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -6,6 +11,7 @@
   background-color: #090839;
   /* padding-top: 0; */
   /* font-family: "Cabinet Grotesk - Medium"; */
+  font-family: "Inter Medium";
   font-weight: 700;
   font-size: 20px;
   /* width: 100%; */

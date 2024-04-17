@@ -62,10 +62,18 @@ function App() {
       }
     };
 
+    const handleClickAway = (e) => {
+      if (e.target.classList.contains("modal")) {
+        handleCloseModal();
+      }
+    };
+
     document.addEventListener("keydown", handleEscClose);
+    document.addEventListener("click", handleClickAway);
     return () => {
       // don't forget to add a clean up function for removing the listener
       document.removeEventListener("keydown", handleEscClose);
+      document.removeEventListener("click", handleClickAway);
     };
   }, [activeModal]); // watch activeModal here
 
