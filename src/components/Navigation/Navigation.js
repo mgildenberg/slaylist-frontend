@@ -2,7 +2,7 @@ import "./Navigation.css";
 import { Link } from "react-router-dom";
 
 const Navigation = ({ onRegisterModal, onLoginModal, isLoggedIn }) => {
-  console.log(onRegisterModal);
+  // console.log(onRegisterModal);
   return (
     <div className="nav">
       {isLoggedIn ? null : (

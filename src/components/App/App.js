@@ -7,11 +7,13 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import SlaylistModal from "../SlaylistModal/SlaylistModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [selectedSlaylistCard, setSelectedSlaylistCard] = useState({});
 
   const handleRegisterModal = () => {
     setActiveModal("register");
@@ -26,6 +28,14 @@ function App() {
   const handleCloseModal = () => {
     setActiveModal("");
     // setSelectedCard({});
+  };
+
+  const handleSelectedSlaylistCard = (card) => {
+    console.log("selecting card");
+    console.log(card);
+    setSelectedSlaylistCard(card);
+    setActiveModal("slaylist");
+    console.log(activeModal);
   };
 
   function handleAltModal(alt) {
@@ -87,7 +97,7 @@ function App() {
               onLoginModal={handleLoginModal}
               isLoggedIn={isLoggedIn}
             />
-            <Main />
+            <Main onSelectedSlaylistCard={handleSelectedSlaylistCard} />
           </Route>
         </Switch>
         <Footer />
@@ -107,6 +117,15 @@ function App() {
             isOpen={activeModal === "signin"}
             isLoading={isLoading}
             onAltClick={handleAltModal}
+          />
+        )}
+        {activeModal === "slaylist" && (
+          <SlaylistModal
+            handleCloseModal={handleCloseModal}
+            // onLogin={handleLogin}
+            isOpen={activeModal === "slaylist"}
+            selectedSlaylistCard={selectedSlaylistCard}
+            onClose={handleCloseModal}
           />
         )}
       </div>

@@ -1,0 +1,105 @@
+.slaylist-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slaylist-modal__content {
+  background-color: #fff;
+  max-width: 650px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 34px 36px;
+  position: relative;
+}
+
+.slaylist-modal__close-button {
+  background-image: url("../../images/cross.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  /* background-color: blue; */
+  height: 25px;
+  width: 25px;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.slaylist-modal__title {
+  margin-top: 0;
+}
+
+/* section copied from SlaylistCard for time being */
+
+/* .slaylist-modal {
+  border: solid #d6d9f1 1px;
+  background-color: #d6d9f1;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+} */
+
+/* .slaylist-modal:hover {
+  border: solid #c01e58 2px;
+} */
+
+.slaylist-modal__flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.slaylist-modal__title-tagline-likes-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* .slaylist-modal__content {
+  padding-left: 15px;
+  padding-right: 15px;
+} */
+
+.slaylist-modal__title {
+  margin: 0;
+}
+
+.slaylist-modal__tagline {
+  margin: 0;
+  padding-top: 5px;
+}
+
+.slaylist-modal__likes {
+  margin: 0;
+  align-self: center;
+}
+
+.slaylist-modal__source-info-container {
+  /* margin-right: 10px; */
+  /* flex-basis: auto; */
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 10px;
+}
+
+.slaylist-modal__owner {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.slaylist-modal__date-created {
+  margin: 0;
+  font-size: 0.9rem;
+}

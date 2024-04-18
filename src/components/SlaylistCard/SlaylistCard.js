@@ -2,10 +2,11 @@ import React from "react";
 import "./SlaylistCard.css";
 // import topSlaylists from "../../utils/constants";
 
-const SlaylistCard = ({ item }) => {
+const SlaylistCard = ({ item, onSelectedSlaylistCard }) => {
   // console.log(topSlaylists);
+
   return (
-    <div className="slaylist-card">
+    <div className="slaylist-card" onClick={() => onSelectedSlaylistCard(item)}>
       <div className="slaylist-card__content">
         <div className="slaylist-card__flex-container">
           <div className="slaylist-card__title-tagline-likes-container">
