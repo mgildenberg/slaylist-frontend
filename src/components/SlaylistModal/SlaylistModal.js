@@ -1,7 +1,22 @@
 import "./SlaylistModal.css";
+import Slaylet from "../Slaylet/Slaylet";
+import { defaultChannels } from "../../utils/constants";
 
 const SlaylistModal = ({ selectedSlaylistCard, onClose }) => {
-  console.log("selectedSlaylistCard in SlaylistModal", selectedSlaylistCard);
+  // For now the filter for data is coming from the default array of data and the only qualifier is the ID exists.
+  // When I make the backend, slaylets will be pulled from the database based on matching to the slaylist ID.
+  const data = defaultChannels.filter((channel) => channel.slaylist_id);
+  console.log(data);
+  const slaylets = data.map((slaylet) => {
+    return (
+      <Slaylet
+        key={slaylet._id}
+        selectedSlaylistCard={selectedSlaylistCard}
+        slayletData={slaylet}
+      />
+    );
+  });
+  // console.log("selectedSlaylistCard in SlaylistModal", selectedSlaylistCard);
   return (
     <div className={"slaylist-modal"}>
       <div className="slaylist-modal__content">
@@ -38,6 +53,7 @@ const SlaylistModal = ({ selectedSlaylistCard, onClose }) => {
             </p>
           </div>
         </div>
+        <div className="slaylist-modal__slaylet-container">{slaylets}</div>
       </div>
     </div>
     // </div>

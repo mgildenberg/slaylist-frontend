@@ -11,12 +11,30 @@
 }
 
 .slaylist-modal__content {
+  /* background-color: #fff;
+  max-width: 650px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 34px 36px;
+  position: relative; */
+
   background-color: #fff;
   max-width: 650px;
   width: 100%;
   border-radius: 20px;
   padding: 34px 36px;
   position: relative;
+  max-height: 90vh; /* Set a maximum height relative to the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.slaylist-modal__content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.slaylist-modal__content {
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
 .slaylist-modal__close-button {
@@ -58,6 +76,10 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .slaylist-modal__title-tagline-likes-container {
@@ -102,4 +124,9 @@
 .slaylist-modal__date-created {
   margin: 0;
   font-size: 0.9rem;
+}
+
+.slaylist-modal__category {
+  position: sticky;
+  top: 0;
 }

@@ -93,4 +93,41 @@ const topSlaylists = [
   },
 ];
 
-module.exports = topSlaylists;
+const defaultChannels = [
+  {
+    _id: "1",
+    slaylist_id: "1",
+    link: "https://www.youtube.com/@TomScottGo",
+    channelId: "TomScottGo",
+    notes:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    _id: "2",
+    slaylist_id: "1",
+    link: "https://www.youtube.com/@mkbhd",
+    channelId: "mkbhd",
+    notes:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    _id: "3",
+    slaylist_id: "1",
+    link: "https://www.youtube.com/@simonegiertz",
+    channelId: "simonegiertz",
+    notes:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    _id: "4",
+    slaylist_id: "1",
+    link: "https://www.youtube.com/@answerinprogress",
+    channelId: "answerinprogress",
+    notes:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+];
+
+// // module.exports = { topSlaylists, defaultChannels };
+
+module.exports = { topSlaylists, defaultChannels };
