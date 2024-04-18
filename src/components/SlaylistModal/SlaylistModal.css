@@ -19,7 +19,7 @@
   position: relative; */
 
   background-color: #fff;
-  max-width: 650px;
+  max-width: 800px;
   width: 100%;
   border-radius: 20px;
   padding: 34px 36px;
@@ -129,4 +129,8 @@
 .slaylist-modal__category {
   position: sticky;
   top: 0;
+}
+
+.slaylist-modal__slaylet-container {
+  margin-top: 20px;
 }

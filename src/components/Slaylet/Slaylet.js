@@ -15,11 +15,21 @@ const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
   console.log("Slaylet component", slayletData);
   return (
     <div className="slaylet">
-      <img className="slaylet__thumbnail" src={thumbnail} alt="thumbnail"></img>
+      <div className="slaylet__content">
+        <img
+          className="slaylet__thumbnail"
+          src={thumbnail}
+          alt="thumbnail"
+        ></img>
 
-      <div className="slaylet__link">{slayletData.channelId}</div>
-      <div className="slaylet__link">{slayletData.link}</div>
-      <div className="slaylet__notes">{slayletData.notes}</div>
+        <div className="slaylet__info-container">
+          <ul className="slaylet__info-list">
+            <li className="slaylet__link">{slayletData.channelId}</li>
+            <li className="slaylet__link">{slayletData.link}</li>
+            <li className="slaylet__notes">{slayletData.notes}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

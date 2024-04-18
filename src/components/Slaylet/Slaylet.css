@@ -1,6 +1,26 @@
+.slaylet__content {
+  display: flex;
+  /* justify-content: space-between; */
+  column-gap: 15px;
+  /* border: solid red 1px; */
+}
+
 .slaylet__thumbnail {
-  max-width: 50%;
-  max-height: 50%;
-  width: 100px;
-  height: auto;
+  /* max-width: 50%; */
+  /* max-height: 50%; */
+  width: 100%;
+  height: 100%;
+  max-width: 110px;
+  align-self: center;
+  /* height: auto; */
+}
+
+.slaylet__info-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding: 0;
+  row-gap: 4px;
 }
