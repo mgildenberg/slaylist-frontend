@@ -31,11 +31,11 @@ function App() {
   };
 
   const handleSelectedSlaylistCard = (card) => {
-    console.log("selecting card");
-    console.log(card);
+    // console.log("selecting card");
+    // console.log(card);
     setSelectedSlaylistCard(card);
     setActiveModal("slaylist");
-    console.log(activeModal);
+    // console.log(activeModal);
   };
 
   function handleAltModal(alt) {
