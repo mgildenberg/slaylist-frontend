@@ -25,20 +25,17 @@ const Navigation = ({ onRegisterModal, onLoginModal, isLoggedIn }) => {
           Login
         </button>
       )}
-      {
-        //temporary ! for testing
-        !isLoggedIn ? (
-          <Link
-            // this is a link because it leads to a different page
-            className="nav__link"
-            to="/dashboard"
-            //   onClick={onCreateModal}
-            // need to add if line for this to be available only when logged in
-          >
-            (Temp) My Slaylists
-          </Link>
-        ) : null
-      }
+      {isLoggedIn ? (
+        <Link
+          // this is a link because it leads to a different page
+          className="nav__link"
+          to="/dashboard"
+          //   onClick={onCreateModal}
+          // need to add if line for this to be available only when logged in
+        >
+          My Slaylists
+        </Link>
+      ) : null}
     </div>
   );
 };

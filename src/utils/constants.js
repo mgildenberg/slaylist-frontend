@@ -5,7 +5,7 @@ const topSlaylists = [
     tagline:
       "Explore the best channels featuring rising and popular pop artists",
     likes: 25,
-    owner_id: "PopStarFan",
+    owner_id: "ampersand",
     date_created: "2024-03-15",
     date_last_modified: "2024-04-10",
     slaylist_id: "SL001",
@@ -90,6 +90,16 @@ const topSlaylists = [
     date_created: "2024-01-14",
     date_last_modified: "2024-04-07",
     slaylist_id: "SL009",
+  },
+  {
+    category: "Youtube channel",
+    title: "Best of Vegan Cooks",
+    tagline: "Vegan cooks worth a view",
+    likes: 18,
+    owner_id: "ampersand",
+    date_created: "2024-01-14",
+    date_last_modified: "2024-04-07",
+    slaylist_id: "SL010",
   },
 ];
 

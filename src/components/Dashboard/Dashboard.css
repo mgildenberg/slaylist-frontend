@@ -1,0 +1,39 @@
+.dashboard {
+  /* border: solid black 1px; */
+  /* margin: 20px; */
+  width: 100%;
+  padding-top: 10px;
+  background-color: #090839;
+  /* height: 100vh; */
+  /* padding-bottom: 2.5rem; */
+  /* overflow: hidden;  */
+}
+
+.slaylist-container {
+  padding-top: 10px;
+  /* margin-right: 10px;
+    margin-left: 10px; */
+  max-width: 1000px;
+  margin: 0 auto;
+  /* width: 100vw; */
+}
+
+.dashboard__content {
+  padding-left: 10px;
+  color: #d6d9f1;
+}
+
+.new-slaylist-btn {
+  background-color: #ac124a;
+  border-color: #ac124a;
+  color: white;
+  /* border-radius: 10px; */
+  margin-bottom: 5px;
+  min-height: 60px;
+  font-size: 16px;
+  content: "Create a new slaylist";
+}
+
+.new-slaylist-btn:hover {
+  border: solid #d6d9f1 2px;
+}

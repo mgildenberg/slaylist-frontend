@@ -8,11 +8,13 @@ import Footer from "../Footer/Footer";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import SlaylistModal from "../SlaylistModal/SlaylistModal";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import Dashboard from "../Dashboard/Dashboard";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [selectedSlaylistCard, setSelectedSlaylistCard] = useState({});
 
   const handleRegisterModal = () => {
@@ -90,15 +92,18 @@ function App() {
   return (
     <div className="page">
       <div className="App">
+        <Header
+          onRegisterModal={handleRegisterModal}
+          onLoginModal={handleLoginModal}
+          isLoggedIn={isLoggedIn}
+        />
         <Switch>
           <Route exact path="/">
-            <Header
-              onRegisterModal={handleRegisterModal}
-              onLoginModal={handleLoginModal}
-              isLoggedIn={isLoggedIn}
-            />
             <Main onSelectedSlaylistCard={handleSelectedSlaylistCard} />
           </Route>
+          <ProtectedRoute path="/dashboard" loggedIn={isLoggedIn}>
+            <Dashboard onSelectedSlaylistCard={handleSelectedSlaylistCard} />
+          </ProtectedRoute>
         </Switch>
         <Footer />
         {activeModal === "register" && (

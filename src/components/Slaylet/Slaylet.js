@@ -7,7 +7,6 @@ const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
 
   const [youtubeData, setYoutubeData] = useState({});
   const [thumbnailUrl, setThumbnailUrl] = useState("");
-  //   const youtubeData = {};
 
   const defaultThumbnail =
     "https://media.istockphoto.com/id/1368368220/vector/clip-art-of-simple-smiley-face.jpg?s=170667a&w=0&k=20&c=G5bZrSoKefkqADINBXcRjvsMZArWgVWBeVi-XPc2rQI=";
@@ -17,7 +16,7 @@ const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
       .then((data) => {
         if (data.items && data.items.length > 0) {
           const channelData = data.items[0]; //interested in the first item only
-          const thumbnailUrl = channelData.snippet.thumbnails.default.url; // You can choose 'default', 'medium', or 'high'
+          const thumbnailUrl = channelData.snippet.thumbnails.default.url; // found that not all channels have 'high' res images, default is safest
           setYoutubeData(youtubeData);
           setThumbnailUrl(thumbnailUrl);
         }
@@ -25,18 +24,8 @@ const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
       .catch((err) => console.log(err));
   }, [slayletData.channelId]);
 
-  console.log(youtubeData);
+  const youtubeThumbnail = thumbnailUrl;
 
-  console.log(thumbnailUrl);
-
-  //   const youtubeThumbnail = youtubeData["items"]; //.snippet.thumbnails.medium.url
-
-  const youtubeThumbnail = thumbnailUrl; //defaultThumbnail;
-  //   console.log(youtubeThumbnail);
-
-  // const youtubeThumbnail = youtubeData.items.thumbnails.medium.url;
-
-  //   console.log("Slaylet component", slayletData);
   return (
     <div className="slaylet">
       <div className="slaylet__content">
