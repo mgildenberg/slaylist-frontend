@@ -10,6 +10,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import SlaylistModal from "../SlaylistModal/SlaylistModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Dashboard from "../Dashboard/Dashboard";
+import NewSlaylist from "../NewSlaylist/NewSlaylist";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -103,6 +104,9 @@ function App() {
           </Route>
           <ProtectedRoute path="/dashboard" loggedIn={isLoggedIn}>
             <Dashboard onSelectedSlaylistCard={handleSelectedSlaylistCard} />
+          </ProtectedRoute>
+          <ProtectedRoute path="/new-slaylist" loggedIn={isLoggedIn}>
+            <NewSlaylist />
           </ProtectedRoute>
         </Switch>
         <Footer />

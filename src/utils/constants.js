@@ -1,7 +1,7 @@
 const topSlaylists = [
   {
     category: "Youtube channel",
-    title: "Top YouTube Channers About Pop Artists",
+    title: "Top YouTube Channels About Pop Artists",
     tagline:
       "Explore the best channels featuring rising and popular pop artists",
     likes: 25,
