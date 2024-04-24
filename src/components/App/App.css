@@ -7,6 +7,9 @@
   width: 100%;
   height: 100%;
   flex: 1 0 auto; /* This will allow the page content to grow and shrink, but not shrink below its base size */
+  background-image: url("../../images/background-blue-pink.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App {

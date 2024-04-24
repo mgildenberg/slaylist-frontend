@@ -1,15 +1,18 @@
 .slaylist-card {
   border: solid #d6d9f1 1px;
-  background-color: #d6d9f1;
+  /* background-color: #d6d9f1; */
+  background-color: rgb(214, 217, 241, 0.6);
   border-radius: 20px;
   width: 100%;
   margin-bottom: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
+  backdrop-filter: blur(4px);
 }
 
 .slaylist-card:hover {
-  border: solid #c01e58 2px;
+  /* border: solid #c01e58 2px; */
+  background-color: rgb(214, 217, 241, 1);
 }
 
 .slaylist-card__flex-container {

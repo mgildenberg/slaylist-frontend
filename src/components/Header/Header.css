@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
-  background-color: #090839;
+  /* background-color: #090839; */
   /* padding-top: 0; */
   /* font-family: "Cabinet Grotesk - Medium"; */
   font-family: "Inter Medium";
@@ -17,10 +17,16 @@
   /* width: 100%; */
   width: 100%;
   /* border: solid red 1px; */
+  background-color: rgb(214, 217, 241, 0.2);
+  border-radius: 10px;
+  margin-top: 10px;
+  backdrop-filter: blur(4px);
 }
 
 .header__logo {
   padding-left: 10px;
-  color: #c01e58;
+  /* color: #c01e58; */
+  color: white;
   text-decoration: none;
+  font-size: 25px;
 }
