@@ -8,7 +8,7 @@ const topSlaylists = [
     owner_id: "ampersand",
     date_created: "2024-03-15",
     date_last_modified: "2024-04-10",
-    slaylist_id: "SL001",
+    _id: "SL001",
   },
   {
     category: "Youtube channel",
@@ -18,7 +18,7 @@ const topSlaylists = [
     owner_id: "RocknRolled",
     date_created: "2024-01-20",
     date_last_modified: "2024-04-01",
-    slaylist_id: "SL002",
+    _id: "SL002",
   },
   {
     category: "Youtube channel",
@@ -28,7 +28,7 @@ const topSlaylists = [
     owner_id: "JazzEnthusiast",
     date_created: "2024-02-11",
     date_last_modified: "2024-04-05",
-    slaylist_id: "SL003",
+    _id: "SL003",
   },
   {
     category: "Youtube channel",
@@ -38,7 +38,7 @@ const topSlaylists = [
     owner_id: "IndieLover",
     date_created: "2024-03-28",
     date_last_modified: "2024-04-12",
-    slaylist_id: "SL004",
+    _id: "SL004",
   },
   {
     category: "Youtube channel",
@@ -48,7 +48,7 @@ const topSlaylists = [
     owner_id: "SwingDancer",
     date_created: "2024-01-05",
     date_last_modified: "2024-03-23",
-    slaylist_id: "SL005",
+    _id: "SL005",
   },
   {
     category: "Youtube channel",
@@ -59,7 +59,7 @@ const topSlaylists = [
     owner_id: "HipHopCritic",
     date_created: "2024-02-25",
     date_last_modified: "2024-04-10",
-    slaylist_id: "SL006",
+    _id: "SL006",
   },
   {
     category: "Youtube channel",
@@ -69,7 +69,7 @@ const topSlaylists = [
     owner_id: "OperaBuff",
     date_created: "2024-02-17",
     date_last_modified: "2024-04-02",
-    slaylist_id: "SL007",
+    _id: "SL007",
   },
   {
     category: "Youtube channel",
@@ -79,7 +79,7 @@ const topSlaylists = [
     owner_id: "ClassicalFan123",
     date_created: "2024-03-10",
     date_last_modified: "2024-04-12",
-    slaylist_id: "SL008",
+    _id: "SL008",
   },
   {
     category: "Youtube channel",
@@ -89,7 +89,7 @@ const topSlaylists = [
     owner_id: "RetroArtFan",
     date_created: "2024-01-14",
     date_last_modified: "2024-04-07",
-    slaylist_id: "SL009",
+    _id: "SL009",
   },
   {
     category: "Youtube channel",
@@ -99,7 +99,7 @@ const topSlaylists = [
     owner_id: "ampersand",
     date_created: "2024-01-14",
     date_last_modified: "2024-04-07",
-    slaylist_id: "SL010",
+    _id: "SL010",
   },
 ];
 

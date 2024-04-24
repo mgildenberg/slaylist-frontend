@@ -11,12 +11,16 @@ import SlaylistModal from "../SlaylistModal/SlaylistModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Dashboard from "../Dashboard/Dashboard";
 import NewSlaylist from "../NewSlaylist/NewSlaylist";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { topSlaylists } from "../../utils/constants";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [selectedSlaylistCard, setSelectedSlaylistCard] = useState({});
+
+  const history = useHistory();
 
   const handleRegisterModal = () => {
     setActiveModal("register");
@@ -44,6 +48,19 @@ function App() {
   function handleAltModal(alt) {
     handleCloseModal();
     setActiveModal(alt);
+  }
+
+  function handleSlaylistSubmit(request) {
+    request.preventDefault();
+    console.log(request);
+    // placeholder until slaylist request can be done
+    setIsLoading(true);
+    console.log("submitting slaylist");
+    // submitSlaylist(request) goes here
+    setIsLoading(false);
+    history.push("/dashboard");
+    setSelectedSlaylistCard(request.title);
+    setActiveModal("slaylist");
   }
 
   function handleRegistration(request) {
@@ -106,7 +123,7 @@ function App() {
             <Dashboard onSelectedSlaylistCard={handleSelectedSlaylistCard} />
           </ProtectedRoute>
           <ProtectedRoute path="/new-slaylist" loggedIn={isLoggedIn}>
-            <NewSlaylist />
+            <NewSlaylist onSubmit={handleSlaylistSubmit} />
           </ProtectedRoute>
         </Switch>
         <Footer />

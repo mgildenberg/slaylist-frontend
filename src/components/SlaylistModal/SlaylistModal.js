@@ -6,7 +6,7 @@ const SlaylistModal = ({ selectedSlaylistCard, onClose }) => {
   // For now the filter for data is coming from the default array of data and the only qualifier is the ID exists.
   // When I make the backend, slaylets will be pulled from the database based on matching to the slaylist ID.
   const data = defaultChannels.filter((channel) => channel.slaylist_id);
-  console.log(data);
+  // console.log(data);
   const slaylets = data.map((slaylet) => {
     return (
       <Slaylet

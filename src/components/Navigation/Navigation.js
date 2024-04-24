@@ -31,7 +31,6 @@ const Navigation = ({ onRegisterModal, onLoginModal, isLoggedIn }) => {
           className="nav__link"
           to="/dashboard"
           //   onClick={onCreateModal}
-          // need to add if line for this to be available only when logged in
         >
           My Slaylists
         </Link>
