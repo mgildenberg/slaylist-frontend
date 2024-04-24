@@ -52,81 +52,82 @@ const NewSlaylist = ({
   };
 
   return (
-    <div className="new-slaylist">
-      New Slaylist Form
-      <form className="new-slaylist__form" onSubmit={onSubmit}>
-        {/* {children} */}
-        <label>
-          Title
-          <input
-            className="new-slaylist__input"
-            type="text"
-            name="title"
-            placeholder="Title"
-            value={title}
-            onChange={handleTitleChange}
-            required
-          />
-        </label>
-        <label>
-          Tagline
-          <input
-            className="new-slaylist__input"
-            type="text"
-            name="tagline"
-            placeholder="Tagline"
-            value={tagline}
-            onChange={handleTaglineChange}
-            // required
-          />
-        </label>
-        <label>
-          Slaylist Type
-          <select
-            className="new-slaylist__dropdown new-slaylist__input" // need to remove the new-slaylist__input class and style the dropdown
-            id="category"
-            name="category"
-            onChange={handleCategoryChange}
-            defaultValue={"Youtube accounts"}
-            value={category}
-            multiple={false}
-            required
-          >
-            <option value="Youtube accounts">Youtube accounts</option>
-            <option value="Test">(Don't Use) Test</option>
-            <option value="Instagram accounts" disabled={true}>
-              [Coming soon] Instagram accounts
-            </option>
-            <option value="TikTok accounts" disabled={true}>
-              [Coming soon] TikTok accounts
-            </option>
-            <option value="Spotify albums" disabled={true}>
-              [Coming soon] Spotify albums
-            </option>
-          </select>
-        </label>
-        {/* {[...Array(currentSlayletForms)].map((e, i) => (
+    <div className="new-slaylist__page">
+      <div className="new-slaylist">
+        New Slaylist Form
+        <form className="new-slaylist__form" onSubmit={onSubmit}>
+          {/* {children} */}
+          <label>
+            Title
+            <input
+              className="new-slaylist__input"
+              type="text"
+              name="title"
+              placeholder="Title"
+              value={title}
+              onChange={handleTitleChange}
+              required
+            />
+          </label>
+          <label>
+            Tagline
+            <input
+              className="new-slaylist__input"
+              type="text"
+              name="tagline"
+              placeholder="Tagline"
+              value={tagline}
+              onChange={handleTaglineChange}
+              // required
+            />
+          </label>
+          <label>
+            Slaylist Type
+            <select
+              className="new-slaylist__dropdown new-slaylist__input" // need to remove the new-slaylist__input class and style the dropdown
+              id="category"
+              name="category"
+              onChange={handleCategoryChange}
+              defaultValue={"Youtube accounts"}
+              value={category}
+              multiple={false}
+              required
+            >
+              <option value="Youtube accounts">Youtube accounts</option>
+              <option value="Test">(Don't Use) Test</option>
+              <option value="Instagram accounts" disabled={true}>
+                [Coming soon] Instagram accounts
+              </option>
+              <option value="TikTok accounts" disabled={true}>
+                [Coming soon] TikTok accounts
+              </option>
+              <option value="Spotify albums" disabled={true}>
+                [Coming soon] Spotify albums
+              </option>
+            </select>
+          </label>
+          {/* {[...Array(currentSlayletForms)].map((e, i) => (
           <NewSlaylet key={i} category={category} />
         ))} */}
-        <div className="new-slaylist__slaylets-container">
-          {slaylets.map((slaylet) => (
-            <NewSlaylet key={slaylet.id} />
-          ))}
-        </div>
-        <button
-          className="new-slaylist__add-new-button"
-          type="button"
-          //   onClick={incrementSlayletForms}
-          onClick={handleAddEntryClick}
-        >
-          Add New Entry
-        </button>
-
-        <div className="new-slaylist__button-container">
-          <button className="new-slaylist__submit-button" type="submit">
-            {isLoading ? "Saving..." : buttonText}
+          <div className="new-slaylist__slaylets-container">
+            {slaylets.map((slaylet) => (
+              <NewSlaylet key={slaylet.id} />
+            ))}
+          </div>
+          <button
+            className="new-slaylist__add-new-button"
+            type="button"
+            //   onClick={incrementSlayletForms}
+            onClick={handleAddEntryClick}
+          >
+            Add New Entry
           </button>
-          {/* {alternativeText && (
+
+          <div className="new-slaylist__button-container">
+            <button className="new-slaylist__submit-button" type="submit">
+              {isLoading ? "Saving..." : buttonText}
+            </button>
+            {/* {alternativeText && (
             <p>
               <button
                 className="new-slaylist__alternative-button"
@@ -137,8 +138,9 @@ const NewSlaylist = ({
               </button>
             </p>
           )} */}
-        </div>
-      </form>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__content">
         <About />
+        {/* <p className="neon-text">Example example</p> */}
       </div>
     </footer>
   );

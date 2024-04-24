@@ -12,7 +12,7 @@ const Dashboard = ({ onSelectedSlaylistCard }) => {
   const history = useHistory();
 
   return (
-    <section className="dashboard">
+    <div className="dashboard">
       <div className="dashboard__content">
         Your list of slaylists + spot to create a new slaylist
       </div>
@@ -37,7 +37,7 @@ const Dashboard = ({ onSelectedSlaylistCard }) => {
           );
         })}
       </div>
-    </section>
+    </div>
   );
 };
 

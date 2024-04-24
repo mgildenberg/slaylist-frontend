@@ -1,18 +1,16 @@
-/* .new-slaylist {
-  color: #d6d9f1;
-} */
-
 .new-slaylist {
   background-color: #fff;
-  max-width: 496px;
+  max-width: 800px;
   width: 100%;
   border-radius: 20px;
   padding: 34px 36px;
   position: relative;
+  margin: 0 auto;
+  /* border-bottom: 200px; */
 }
 
-.new-slaylist__title {
-  margin-top: 0;
+.new-slaylist__page {
+  padding-bottom: 80px;
 }
 
 .new-slaylist__submit-button {
@@ -55,7 +53,7 @@
 
 .new-slaylist__form {
   padding-top: 25px;
-  position: sticky;
+  /* position: sticky; */
 }
 
 /* .new-slaylist__alternative-button {
@@ -114,4 +112,5 @@
 
 .new-slaylist__slaylets-container {
   margin-top: 18px;
+  margin-bottom: 50px;
 }
