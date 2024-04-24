@@ -54,40 +54,26 @@ function App() {
 
   function handleSlaylistSubmit(request) {
     request.preventDefault();
-    // console.log(request);
-    // console.log(request.target);
-    // console.log(request.target.title.value);
-    // console.log(request.target.tagline.value);
-    // console.log(request.target.category.value);
-    // placeholder until slaylist request can be done
     setIsLoading(true);
     console.log("submitting slaylist");
-    // submitSlaylist(request) goes here
     setIsLoading(false);
     history.push("/dashboard");
-    // setSelectedSlaylistCard(request.title);
-    // this doesn't work
+
     const tempSlaylistCardDataObj = {
       title: request.target.title.value,
       tagline: request.target.tagline.value,
       category: request.target.category.value,
-      date_created: "2024-01-20",
-      date_last_modified: "2024-04-01",
+      date_created: new Date().toISOString().split("T")[0],
+      date_last_modified: new Date().toISOString().split("T")[0],
       owner_id: "ampersand",
       _id: "12345",
       likes: 0,
+      slaylets: [],
     };
     console.log(tempSlaylistCardDataObj);
-    const tempSlaylistCard = (
-      <SlaylistCard
-        item={tempSlaylistCardDataObj}
-        onSelectedSlaylistCard={handleSelectedSlaylistCard}
-        key={tempSlaylistCardDataObj._id}
-      />
-    );
-    console.log(tempSlaylistCard);
-    setSelectedSlaylistCard(tempSlaylistCard);
-    console.log(tempSlaylistCard);
+
+    setSelectedSlaylistCard(tempSlaylistCardDataObj);
+
     setActiveModal("slaylist");
   }
 

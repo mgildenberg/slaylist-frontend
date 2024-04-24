@@ -1,3 +1,5 @@
+const tempCurrentUser = "ampersand";
+
 const topSlaylists = [
   {
     category: "Youtube channel",
@@ -140,4 +142,4 @@ const defaultChannels = [
 
 // // module.exports = { topSlaylists, defaultChannels };
 
-module.exports = { topSlaylists, defaultChannels };
+module.exports = { topSlaylists, defaultChannels, tempCurrentUser };
