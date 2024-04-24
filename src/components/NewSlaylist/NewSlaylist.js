@@ -84,10 +84,11 @@ const NewSlaylist = ({
           Slaylist Type
           <select
             className="new-slaylist__dropdown new-slaylist__input" // need to remove the new-slaylist__input class and style the dropdown
-            id="slaylist-type"
-            name="slaylist-type"
+            id="category"
+            name="category"
             onChange={handleCategoryChange}
             defaultValue={"Youtube accounts"}
+            value={category}
             multiple={false}
             required
           >
