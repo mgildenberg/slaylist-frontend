@@ -1,22 +1,13 @@
 .dashboard {
-  /* border: solid black 1px; */
-  /* margin: 20px; */
   width: 100%;
   padding-top: 10px;
-  padding-bottom: 200px;
-  /* background-color: #090839; */
-  /* height: 100vh; */
-  /* padding-bottom: 2.5rem; */
   overflow: auto;
 }
 
 .slaylist-container {
   padding-top: 10px;
-  /* margin-right: 10px;
-    margin-left: 10px; */
   max-width: 1000px;
   margin: 0 auto;
-  /* width: 100vw; */
 }
 
 .dashboard__content {
@@ -24,17 +15,22 @@
   color: #d6d9f1;
 }
 
+.dashboard__tagline {
+  font-size: 19px;
+  color: white;
+}
+
 .new-slaylist-btn {
   background-color: #ac124a;
   border-color: #ac124a;
   color: white;
-  /* border-radius: 10px; */
+  font-style: bold;
   margin-bottom: 5px;
   min-height: 60px;
-  font-size: 16px;
-  content: "Create a new slaylist";
+  font-size: 19px;
 }
 
 .new-slaylist-btn:hover {
   border: solid #d6d9f1 2px;
+  color: #ac124a;
 }

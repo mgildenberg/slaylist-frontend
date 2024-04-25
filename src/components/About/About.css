@@ -1,0 +1,9 @@
+.about__link {
+  text-decoration: none;
+  color: rgb(214, 217, 241, 0.9);
+}
+
+.about__link:hover {
+  /* font-weight: bold; */
+  color: rgb(214, 217, 241, 1);
+}

@@ -1,6 +1,7 @@
 import "./Slaylet.css";
 import getChannelData from "../../utils/YoutubeApi";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
   //   console.log("selectedSlaylistCard in SlaylistModal", selectedSlaylistCard);
@@ -38,8 +39,12 @@ const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
 
         <div className="slaylet__info-container">
           <ul className="slaylet__info-list">
-            <li className="slaylet__link">{slayletData.channelId}</li>
-            <li className="slaylet__link">{slayletData.link}</li>
+            <li className="slaylet__list-item">
+              <a classname="slaylet__link" href={slayletData.link}>
+                {slayletData.channelId}{" "}
+              </a>
+            </li>
+            {/* <li className="slaylet__link">{slayletData.link}</li> */}
             <li className="slaylet__notes">{slayletData.notes}</li>
           </ul>
         </div>

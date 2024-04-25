@@ -11,7 +11,9 @@ const Main = ({ onSelectedSlaylistCard }) => {
   return (
     <main className="main">
       <div className="main__content">
-        Slaylist - Tidy topic list for social media accounts and posts
+        <h1 className="main__tagline">
+          Slaylist - Tidy topic list for social media accounts and posts
+        </h1>
       </div>
       <div className="slaylist-container">
         {sortedSlaylists.map((item) => {

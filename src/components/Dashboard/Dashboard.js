@@ -14,7 +14,9 @@ const Dashboard = ({ onSelectedSlaylistCard }) => {
   return (
     <div className="dashboard">
       <div className="dashboard__content">
-        Your list of slaylists + spot to create a new slaylist
+        <h1 class="dashboard__tagline">
+          View your Slaylists or make a new one ✨
+        </h1>
       </div>
       <div className="slaylist-container">
         {/* <div className="new-slaylist-button"> */}

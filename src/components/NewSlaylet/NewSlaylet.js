@@ -1,14 +1,15 @@
 import "./NewSlaylet.css";
-// import { handle } from "react-router-dom";
 import { React, useState } from "react";
 
-const NewSlaylet = ({
-  children,
-  buttonText = "Submit Slaylet",
-  onSubmit,
-  isLoading,
-  category,
-}) => {
+const NewSlaylet = (
+  {
+    // children,
+    // buttonText = "Submit Slaylet",
+    // onSubmit,
+    // isLoading,
+    // category,
+  }
+) => {
   const [handle, sethandle] = useState("");
 
   const handlehandleChange = (e) => {
