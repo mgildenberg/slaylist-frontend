@@ -7,7 +7,7 @@
 
 .nav__button {
   /* border: none; */
-  /* border: solid rgb(214, 217, 241, 0.2) 2px; */
+  border: solid rgb(214, 217, 241, 0.2) 2px;
   /* background: #282f6c; */
   background-color: rgb(214, 217, 241, 0.2);
   border-radius: 50px;
@@ -15,6 +15,7 @@
   font-size: 15px;
   padding: 10px;
   backdrop-filter: blur(8px);
+  min-width: 100px;
 }
 
 .nav__button:hover {
@@ -25,7 +26,7 @@
 
 .nav__link {
   text-decoration: none;
-  /* border: solid rgb(214, 217, 241, 0.2) 2px; */
+  border: solid rgb(214, 217, 241, 0.2) 2px;
   /* background-color: #282f6c; */
   background-color: rgb(214, 217, 241, 0.2);
   border-radius: 50px;
@@ -35,6 +36,8 @@
   /* font-weight: 700; */
   font-size: 15px;
   backdrop-filter: blur(4px);
+  min-width: 100px;
+  text-align: center;
 }
 
 .nav__link:hover {

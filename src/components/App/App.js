@@ -1,4 +1,4 @@
-import logo from "../../logo.svg";
+// import logo from "../../logo.svg";
 import "../App/App.css";
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
@@ -8,18 +8,17 @@ import Footer from "../Footer/Footer";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import SlaylistModal from "../SlaylistModal/SlaylistModal";
-import SlaylistCard from "../SlaylistCard/SlaylistCard";
+// import SlaylistCard from "../SlaylistCard/SlaylistCard";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Dashboard from "../Dashboard/Dashboard";
 import NewSlaylist from "../NewSlaylist/NewSlaylist";
+import LogoutConfirmationModal from "../LogoutConfirmationModal/LogoutConfirmationModal";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { topSlaylists } from "../../utils/constants";
-import { set } from "mongoose";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedSlaylistCard, setSelectedSlaylistCard] = useState({});
 
   const history = useHistory();
@@ -97,6 +96,21 @@ function App() {
     setIsLoading(false);
   }
 
+  function handleClickLogout(request) {
+    request.preventDefault();
+    //placeholder until signOut request can be done
+    setActiveModal("logout-confirm");
+  }
+
+  function handleConfirmLogout(request) {
+    request.preventDefault();
+    console.log("logging out");
+    history.push("/");
+    handleCloseModal();
+    // signOut(request) goes here
+    setIsLoggedIn(false);
+  }
+
   useEffect(() => {
     if (!activeModal) return; // stop the effect not to add the listener if there is no active modal
     const handleEscClose = (e) => {
@@ -128,6 +142,7 @@ function App() {
           onRegisterModal={handleRegisterModal}
           onLoginModal={handleLoginModal}
           isLoggedIn={isLoggedIn}
+          onClickLogout={handleClickLogout}
         />
         <Switch>
           <Route exact path="/">
@@ -165,6 +180,17 @@ function App() {
             // onLogin={handleLogin}
             isOpen={activeModal === "slaylist"}
             selectedSlaylistCard={selectedSlaylistCard}
+            onClose={handleCloseModal}
+          />
+        )}
+        {activeModal === "logout-confirm" && (
+          <LogoutConfirmationModal
+            handleCloseModal={handleCloseModal}
+            // onLogin={handleLogin}
+            isOpen={activeModal === "logout-confirm"}
+            onLogoutConfirmation={handleConfirmLogout}
+            onAltClick={handleAltModal}
+            // selectedSlaylistCard={selectedSlaylistCard}
             onClose={handleCloseModal}
           />
         )}

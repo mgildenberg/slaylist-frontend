@@ -1,7 +1,13 @@
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 
-const Navigation = ({ onRegisterModal, onLoginModal, isLoggedIn }) => {
+const Navigation = ({
+  onRegisterModal,
+  onLoginModal,
+  onClickLogout,
+  isLoggedIn,
+  onConfirmLogout,
+}) => {
   // console.log(onRegisterModal);
   return (
     <div className="nav">
@@ -34,6 +40,17 @@ const Navigation = ({ onRegisterModal, onLoginModal, isLoggedIn }) => {
         >
           My Slaylists
         </Link>
+      ) : null}
+      {isLoggedIn ? (
+        <button
+          // this is a button because it does multiple things
+          className="nav__button"
+          type="button"
+          // to="/"
+          onClick={onClickLogout}
+        >
+          Log Out
+        </button>
       ) : null}
     </div>
   );
