@@ -30,17 +30,18 @@ const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
   return (
     <div className="slaylet">
       <div className="slaylet__content">
-        <img
-          className="slaylet__thumbnail"
-          src={youtubeThumbnail ? youtubeThumbnail : defaultThumbnail}
-          //   src={defaultThumbnail}
-          alt="thumbnail"
-        ></img>
-
+        <div className="slaylet__thumbnail_background">
+          <img
+            className="slaylet__thumbnail"
+            src={youtubeThumbnail ? youtubeThumbnail : defaultThumbnail}
+            //   src={defaultThumbnail}
+            alt="thumbnail"
+          ></img>
+        </div>
         <div className="slaylet__info-container">
           <ul className="slaylet__info-list">
             <li className="slaylet__list-item">
-              <a classname="slaylet__link" href={slayletData.link}>
+              <a className="slaylet__link" href={slayletData.link}>
                 {slayletData.channelId}{" "}
               </a>
             </li>

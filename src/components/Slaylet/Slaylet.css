@@ -14,21 +14,22 @@
 }
 
 .slaylet__link,
-.slaylet__link:hover,
 .slaylet__link:visited {
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
 
+.slaylet__link:hover {
+  color: #c01e58;
+}
+
 .slaylet__thumbnail {
-  /* max-width: 50%; */
-  /* max-height: 50%; */
   width: 100%;
   height: 100%;
-  max-width: 110px;
+  width: 110px;
+  height: 110px;
   align-self: center;
-  /* height: auto; */
 }
 
 .slaylet__info-list {
@@ -43,4 +44,30 @@
 
 .slaylet__list-item {
   list-style: none;
+}
+
+@media screen and (max-width: 479px) {
+  .slaylet__content {
+    flex-direction: column;
+  }
+
+  .slaylet__thumbnail_background {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(214, 217, 241, 1);
+    margin-bottom: 10px;
+  }
+
+  .slaylet__thumbnail {
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slaylet__thumbnail {
+    width: 100%;
+    height: 100%;
+    width: 110px;
+    height: 110px;
+  }
 }

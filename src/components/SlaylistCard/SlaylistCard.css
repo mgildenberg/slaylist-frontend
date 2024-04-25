@@ -39,6 +39,13 @@
 .slaylist-card__tagline {
   margin: 0;
   padding-top: 5px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to display before truncating */
+  -webkit-box-orient: vertical;
 }
 
 .slaylist-card__likes {
@@ -63,4 +70,31 @@
 .slaylist-card__date-created {
   margin: 0;
   font-size: 0.9rem;
+}
+
+@media screen and (max-width: 479px) {
+  .slaylist-card__tagline {
+    font-size: 0.9rem;
+    white-space: wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to display before truncating */
+  }
+
+  .slaylist-card__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to display before truncating */
+    -webkit-box-orient: vertical;
+  }
+
+  .slaylist-card__source-info-container {
+    display: none;
+  }
+
+  .slaylist-card__likes {
+    font-size: 1rem;
+    /* I need to figure out how to make them align the right way every time */
+  }
 }

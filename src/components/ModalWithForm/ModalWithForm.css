@@ -12,8 +12,8 @@
 
 .modal__content {
   background-color: #fff;
+  width: 70%;
   max-width: 496px;
-  width: 100%;
   border-radius: 20px;
   padding: 34px 36px;
   position: relative;
@@ -112,4 +112,10 @@
 .modal__input_radio:checked + label {
   color: rgba(0, 0, 0, 1);
   margin-left: 7px;
+}
+
+@media screen and (max-width: 479px) {
+  .modal {
+    border: solid red 5px;
+  }
 }

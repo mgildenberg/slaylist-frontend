@@ -7,6 +7,8 @@
 .slaylist-container {
   padding-top: 10px;
   max-width: 1000px;
+  width: 99%;
+  /* width: 95%; */
   margin: 0 auto;
 }
 

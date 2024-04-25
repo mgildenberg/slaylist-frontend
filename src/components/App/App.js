@@ -121,7 +121,12 @@ function App() {
     };
 
     const handleClickAway = (e) => {
-      if (e.target.classList.contains("modal")) {
+      console.log(e.target.classList.value);
+      if (
+        // clicking outside the modal content will close the modal
+        e.target.classList.contains("modal") ||
+        e.target.classList.value.endsWith("-modal")
+      ) {
         handleCloseModal();
       }
     };
