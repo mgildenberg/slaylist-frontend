@@ -3,11 +3,8 @@ import "./Dashboard.css";
 import { topSlaylists } from "../../utils/constants";
 import SlaylistCard from "../SlaylistCard/SlaylistCard";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import Preloader from "../Preloader/Preloader";
 
 const Dashboard = ({ onSelectedSlaylistCard }) => {
-  // console.log(onSelectedSlaylistCard);
-  // console.log(topSlaylists);
   const me = "ampersand";
   const mySlaylists = topSlaylists.filter((item) => item.owner_id === me);
   const history = useHistory();
@@ -15,7 +12,6 @@ const Dashboard = ({ onSelectedSlaylistCard }) => {
   return (
     <div className="dashboard">
       <div className="dashboard__content">
-        <Preloader />
         <h1 class="dashboard__tagline">
           View your Slaylists or make a new one ✨
         </h1>
