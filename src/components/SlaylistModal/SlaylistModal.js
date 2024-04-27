@@ -29,7 +29,7 @@ const SlaylistModal = ({ selectedSlaylistCard, onClose }) => {
           onClick={onClose}
         />
         <p className="slaylist-modal__category">
-          {selectedSlaylistCard.category}
+          Category: {selectedSlaylistCard.category}
         </p>
 
         <div className="slaylist-modal__flex-container">

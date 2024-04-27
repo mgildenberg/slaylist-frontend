@@ -29,7 +29,7 @@ const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
         })
         .catch((err) => console.log(err))
         .finally(() => setIsLoading(false));
-    }, 750);
+    }, 500);
   }, [slayletData.channelId]);
 
   const youtubeThumbnail = thumbnailUrl;

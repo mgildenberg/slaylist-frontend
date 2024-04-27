@@ -114,8 +114,8 @@
   margin-left: 7px;
 }
 
-@media screen and (max-width: 479px) {
+/* @media screen and (max-width: 479px) {
   .modal {
     border: solid red 5px;
   }
-}
+} */
