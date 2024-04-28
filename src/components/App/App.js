@@ -14,12 +14,34 @@ import Dashboard from "../Dashboard/Dashboard";
 import NewSlaylist from "../NewSlaylist/NewSlaylist";
 import LogoutConfirmationModal from "../LogoutConfirmationModal/LogoutConfirmationModal";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { CurrentScreenSizeContext } from "../../contexts/ScreenSizeContext";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedSlaylistCard, setSelectedSlaylistCard] = useState({});
+  const [currentScreenWidth, setCurrentScreenWidth] = useState(
+    window.innerWidth
+  );
+  const [currentScreenHeight, setCurrentScreenHeight] = useState(
+    window.innerHeight
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCurrentScreenWidth(window.innerWidth);
+      setCurrentScreenHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // console.log("width", currentScreenWidth);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [currentScreenWidth, currentScreenHeight]);
 
   const history = useHistory();
 
@@ -141,66 +163,70 @@ function App() {
   }, [activeModal]); // watch activeModal here
 
   return (
-    <div className="page">
-      <div className="App">
-        <Header
-          onRegisterModal={handleRegisterModal}
-          onLoginModal={handleLoginModal}
-          isLoggedIn={isLoggedIn}
-          onClickLogout={handleClickLogout}
-        />
-        <Switch>
-          <Route exact path="/">
-            <Main onSelectedSlaylistCard={handleSelectedSlaylistCard} />
-          </Route>
-          <ProtectedRoute path="/dashboard" loggedIn={isLoggedIn}>
-            <Dashboard onSelectedSlaylistCard={handleSelectedSlaylistCard} />
-          </ProtectedRoute>
-          <ProtectedRoute path="/new-slaylist" loggedIn={isLoggedIn}>
-            <NewSlaylist onSubmit={handleSlaylistSubmit} />
-          </ProtectedRoute>
-        </Switch>
-        <Footer />
-        {activeModal === "register" && (
-          <RegisterModal
-            handleCloseModal={handleCloseModal}
-            onRegistration={handleRegistration}
-            isOpen={activeModal === "register"}
-            isLoading={isLoading}
-            onAltClick={handleAltModal}
+    <CurrentScreenSizeContext.Provider
+      value={{ currentScreenWidth, currentScreenHeight }}
+    >
+      <div className="page">
+        <div className="App">
+          <Header
+            onRegisterModal={handleRegisterModal}
+            onLoginModal={handleLoginModal}
+            isLoggedIn={isLoggedIn}
+            onClickLogout={handleClickLogout}
           />
-        )}
-        {activeModal === "signin" && (
-          <LoginModal
-            handleCloseModal={handleCloseModal}
-            onLogin={handleLogin}
-            isOpen={activeModal === "signin"}
-            isLoading={isLoading}
-            onAltClick={handleAltModal}
-          />
-        )}
-        {activeModal === "slaylist" && (
-          <SlaylistModal
-            handleCloseModal={handleCloseModal}
-            // onLogin={handleLogin}
-            isOpen={activeModal === "slaylist"}
-            selectedSlaylistCard={selectedSlaylistCard}
-            onClose={handleCloseModal}
-          />
-        )}
-        {activeModal === "logout-confirm" && (
-          <LogoutConfirmationModal
-            handleCloseModal={handleCloseModal}
-            // onLogin={handleLogin}
-            isOpen={activeModal === "logout-confirm"}
-            onLogoutConfirmation={handleConfirmLogout}
-            onAltClick={handleAltModal}
-            // selectedSlaylistCard={selectedSlaylistCard}
-            onClose={handleCloseModal}
-          />
-        )}
+          <Switch>
+            <Route exact path="/">
+              <Main onSelectedSlaylistCard={handleSelectedSlaylistCard} />
+            </Route>
+            <ProtectedRoute path="/dashboard" loggedIn={isLoggedIn}>
+              <Dashboard onSelectedSlaylistCard={handleSelectedSlaylistCard} />
+            </ProtectedRoute>
+            <ProtectedRoute path="/new-slaylist" loggedIn={isLoggedIn}>
+              <NewSlaylist onSubmit={handleSlaylistSubmit} />
+            </ProtectedRoute>
+          </Switch>
+          <Footer />
+          {activeModal === "register" && (
+            <RegisterModal
+              handleCloseModal={handleCloseModal}
+              onRegistration={handleRegistration}
+              isOpen={activeModal === "register"}
+              isLoading={isLoading}
+              onAltClick={handleAltModal}
+            />
+          )}
+          {activeModal === "signin" && (
+            <LoginModal
+              handleCloseModal={handleCloseModal}
+              onLogin={handleLogin}
+              isOpen={activeModal === "signin"}
+              isLoading={isLoading}
+              onAltClick={handleAltModal}
+            />
+          )}
+          {activeModal === "slaylist" && (
+            <SlaylistModal
+              handleCloseModal={handleCloseModal}
+              // onLogin={handleLogin}
+              isOpen={activeModal === "slaylist"}
+              selectedSlaylistCard={selectedSlaylistCard}
+              onClose={handleCloseModal}
+            />
+          )}
+          {activeModal === "logout-confirm" && (
+            <LogoutConfirmationModal
+              handleCloseModal={handleCloseModal}
+              // onLogin={handleLogin}
+              isOpen={activeModal === "logout-confirm"}
+              onLogoutConfirmation={handleConfirmLogout}
+              onAltClick={handleAltModal}
+              // selectedSlaylistCard={selectedSlaylistCard}
+              onClose={handleCloseModal}
+            />
+          )}
+        </div>
       </div>
-    </div>
+    </CurrentScreenSizeContext.Provider>
   );
 }
 
