@@ -15,6 +15,7 @@ import NewSlaylist from "../NewSlaylist/NewSlaylist";
 import LogoutConfirmationModal from "../LogoutConfirmationModal/LogoutConfirmationModal";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { CurrentScreenSizeContext } from "../../contexts/ScreenSizeContext";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -184,7 +185,11 @@ function App() {
             <ProtectedRoute path="/new-slaylist" loggedIn={isLoggedIn}>
               <NewSlaylist onSubmit={handleSlaylistSubmit} />
             </ProtectedRoute>
+            <Route>
+              <PageNotFound />
+            </Route>
           </Switch>
+
           <Footer />
           {activeModal === "register" && (
             <RegisterModal
