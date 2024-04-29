@@ -11,11 +11,12 @@ const SlaylistCard = ({
   const [isLiked, setIsLiked] = useState(false);
 
   function handleLike(e) {
+    console.log("SlaylistCard isLoggedIn prop", isLoggedIn);
     if (!isLoggedIn) {
       console.log("SlaylistCard testing for closing", e.target.className);
       // Can view a slaylist but cannot Like if the user is not logged in
       e.stopPropagation(); // to prevent the modal from opening if you don't want it to
-      onNotLoggedIn("SlaylistCard");
+      onNotLoggedIn("SlaylistCard", isLoggedIn);
       return;
     }
 

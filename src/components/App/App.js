@@ -16,6 +16,7 @@ import LogoutConfirmationModal from "../LogoutConfirmationModal/LogoutConfirmati
 import LoginAlertModal from "../LoginAlertModal/LoginAlertModal";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { CurrentScreenSizeContext } from "../../contexts/ScreenSizeContext";
+import { UserContext } from "../../contexts/UserContext";
 import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
@@ -138,11 +139,15 @@ function App() {
     setIsLoggedIn(false);
   }
 
-  function handleIsNotLoggedIn(likeButtonClassName) {
+  function handleIsNotLoggedIn(likeButtonClassName, isLoggedInProp) {
+    // just added isLoggedIn as an arg
     // request.preventDefault();
+    console.log("handleIsNotLoggedIn function", isLoggedInProp);
     setLikeButtonOrigin(likeButtonClassName);
-    console.log("likeButtonClassName", likeButtonClassName);
-    setActiveModal("login-alert");
+    // console.log("likeButtonClassName", likeButtonClassName);
+    if (!isLoggedInProp && !isLoggedIn) {
+      setActiveModal("login-alert");
+    }
   }
 
   function handleLoginAlert(request) {
@@ -205,7 +210,11 @@ function App() {
               />
             </Route>
             <ProtectedRoute path="/dashboard" loggedIn={isLoggedIn}>
-              <Dashboard onSelectedSlaylistCard={handleSelectedSlaylistCard} />
+              <Dashboard
+                onSelectedSlaylistCard={handleSelectedSlaylistCard}
+                isLoggedin={isLoggedIn}
+                onNotLoggedIn={handleIsNotLoggedIn}
+              />
             </ProtectedRoute>
             <ProtectedRoute path="/new-slaylist" loggedIn={isLoggedIn}>
               <NewSlaylist onSubmit={handleSlaylistSubmit} />

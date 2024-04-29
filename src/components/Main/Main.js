@@ -4,6 +4,7 @@ import { topSlaylists } from "../../utils/constants";
 import SlaylistCard from "../SlaylistCard/SlaylistCard";
 
 const Main = ({ onSelectedSlaylistCard, isLoggedIn, onNotLoggedIn }) => {
+  console.log("Main isLoggedIn prop", isLoggedIn);
   const sortedSlaylists = topSlaylists.sort((a, b) => b.likes - a.likes);
 
   return (
