@@ -1,10 +1,10 @@
 import "./SlaylistModal.css";
 import Slaylet from "../Slaylet/Slaylet";
 import { defaultChannels } from "../../utils/constants";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { CurrentScreenSizeContext } from "../../contexts/ScreenSizeContext";
 
-const SlaylistModal = ({ selectedSlaylistCard, onClose }) => {
+const SlaylistModal = ({ selectedSlaylistCard, onClose, isLiked }) => {
   // For now the filter for data is coming from the default array of data and the only qualifier is the ID exists.
   // When I make the backend, slaylets will be pulled from the database based on matching to the slaylist ID.
   const data = defaultChannels.filter((channel) => channel.slaylist_id);
@@ -30,18 +30,40 @@ const SlaylistModal = ({ selectedSlaylistCard, onClose }) => {
 
   // This context will allow the code to move certain elements around based on screen size
   const { currentScreenWidth } = useContext(CurrentScreenSizeContext);
-  // console.log(currentScreenWidth);
 
   const smallScreen = currentScreenWidth <= 479 ? true : false;
 
+  const [isSlaylistModalLiked, setIsSlaylistModalLiked] = useState(isLiked);
+  console.log("isSlaylistModalLiked", isSlaylistModalLiked);
+
+  function handleLike(e) {
+    // When there is a backend, this could be an API call to update the likes for this card in the database
+    // For now, it's just a visual change
+    // It does not communicate back to the SlaylistCard component
+    e.stopPropagation(); // to prevent the modal from opening if you don't want it to
+    console.log("like button clicked on Slaylist Modal");
+    setIsSlaylistModalLiked(!isSlaylistModalLiked);
+  }
+
   const likesElement = (
-    <p
-      className={`slaylist-modal__likes ${
-        smallScreen ? "slaylist-modal__likes_float" : ""
+    <div
+      className={`slaylist-modal__likes-container ${
+        smallScreen ? "slaylist-modal__likes-container_float" : ""
       }`}
     >
-      ♡ {selectedSlaylistCard.likes}
-    </p>
+      <button
+        className={`slaylist-modal__like-button ${
+          isSlaylistModalLiked ? "slaylist-modal__like-button_active" : ""
+        }`}
+        onClick={handleLike}
+        type="button"
+      ></button>
+      <p className="slaylist-modal__likes">
+        {isSlaylistModalLiked
+          ? selectedSlaylistCard.likes + 1
+          : selectedSlaylistCard.likes}
+      </p>
+    </div>
   );
 
   // console.log(smallScreen);

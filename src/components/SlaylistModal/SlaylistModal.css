@@ -107,6 +107,23 @@
   align-self: center;
 }
 
+.slaylist-modal__like-button {
+  background: transparent url("../../images/like-inactive.svg") center no-repeat;
+  border: none;
+  width: 21px;
+  height: 18px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slaylist-modal__like-button_active {
+  background: transparent url("../../images/like-active.svg") center no-repeat;
+}
+
+.slaylist-modal__like-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .slaylist-modal__source-info-container {
   /* margin-right: 10px; */
   /* flex-basis: auto; */
@@ -155,11 +172,15 @@
     justify-content: space-between;
   }
 
-  .slaylist-modal__likes_float {
+  .slaylist-modal__likes-container {
     position: absolute;
     top: 22px;
     left: 20px;
     cursor: pointer;
+  }
+
+  .slaylist-modal__likes {
+    display: none;
   }
 }
 

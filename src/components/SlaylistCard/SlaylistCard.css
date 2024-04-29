@@ -8,6 +8,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   backdrop-filter: blur(4px);
+  cursor: pointer;
 }
 
 .slaylist-card:hover {
@@ -48,11 +49,6 @@
   -webkit-box-orient: vertical;
 }
 
-.slaylist-card__likes {
-  margin: 0;
-  align-self: center;
-}
-
 .slaylist-card__source-info-container {
   /* margin-right: 10px; */
   /* flex-basis: auto; */
@@ -72,7 +68,45 @@
   font-size: 0.9rem;
 }
 
+.slaylist-card__likes-container {
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0;
+}
+
+.slaylist-card__likes {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+.slaylist-card__like-button {
+  background: transparent url("../../images/like-inactive.svg") center no-repeat;
+  border: none;
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0;
+  align-self: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slaylist-card__like-button_active {
+  background: transparent url("../../images/like-active.svg") center no-repeat;
+}
+
+.slaylist-card__like-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 479px) {
+  .slaylist-card {
+    max-width: (90%, 400px);
+  }
+
   .slaylist-card__tagline {
     font-size: 0.9rem;
     white-space: wrap;
@@ -94,7 +128,21 @@
   }
 
   .slaylist-card__likes {
-    font-size: 1rem;
+    display: none;
+    /* font-size: 1rem; */
     /* I need to figure out how to make them align the right way every time */
+  }
+
+  .slaylist-card__like-button {
+    /* width: 0.8rem;
+    height: 0.8rem; */
+    width: 1.5em;
+    height: 1.5em;
+    /* z-index: 1; */
+  }
+
+  .slaylist-card__like-button_active {
+    width: 1.5em;
+    height: 1.5em;
   }
 }

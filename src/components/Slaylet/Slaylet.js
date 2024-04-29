@@ -1,11 +1,11 @@
 import "./Slaylet.css";
 import getChannelData from "../../utils/YoutubeApi";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
 
 const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
-  //   console.log("selectedSlaylistCard in SlaylistModal", selectedSlaylistCard);
+  // selectedSlaylistCard will be utilized when there is a backend to pull data from
+  // For now, it's not necessary, but I'm keeping it in the props for future use
 
   const [youtubeData, setYoutubeData] = useState({});
   const [thumbnailUrl, setThumbnailUrl] = useState("");
@@ -44,25 +44,25 @@ const Slaylet = ({ selectedSlaylistCard, slayletData }) => {
             <img
               className="slaylet__thumbnail"
               src={youtubeThumbnail ? youtubeThumbnail : defaultThumbnail}
-              //   src={defaultThumbnail}
-              alt="thumbnail"
+              alt={`thumbnail for ${slayletData.channelId}`}
             ></img>
           )}
         </div>
         <div className="slaylet__info-container">
           <ul className="slaylet__info-list">
             <li className="slaylet__list-item">
-              <a className="slaylet__link" href={slayletData.link}>
+              <a
+                className="slaylet__link"
+                target="_blank"
+                rel="noreferrer noopener"
+                href={slayletData.link}
+              >
                 {slayletData.channelId}{" "}
               </a>
             </li>
-            {/* <li className="slaylet__link">{slayletData.link}</li> */}
             <li className="slaylet__notes">{slayletData.notes}</li>
           </ul>
         </div>
-        {/* <div className="test-preloader-container">
-          <Preloader />
-        </div> */}
       </div>
     </div>
   );

@@ -22,6 +22,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedSlaylistCard, setSelectedSlaylistCard] = useState({});
+  const [isSlaylistLiked, setIsSlaylistLiked] = useState(false);
   const [currentScreenWidth, setCurrentScreenWidth] = useState(
     window.innerWidth
   );
@@ -61,11 +62,12 @@ function App() {
     // setSelectedCard({});
   };
 
-  const handleSelectedSlaylistCard = (card) => {
+  const handleSelectedSlaylistCard = (card, isLiked) => {
     // console.log("selecting card");
     // console.log(card);
     setSelectedSlaylistCard(card);
     setActiveModal("slaylist");
+    setIsSlaylistLiked(isLiked);
     // console.log(activeModal);
   };
 
@@ -144,7 +146,7 @@ function App() {
     };
 
     const handleClickAway = (e) => {
-      console.log(e.target.classList.value);
+      // console.log(e.target.classList.value);
       if (
         // clicking outside the modal content will close the modal
         e.target.classList.contains("modal") ||
@@ -215,6 +217,7 @@ function App() {
               // onLogin={handleLogin}
               isOpen={activeModal === "slaylist"}
               selectedSlaylistCard={selectedSlaylistCard}
+              isLiked={isSlaylistLiked}
               onClose={handleCloseModal}
             />
           )}

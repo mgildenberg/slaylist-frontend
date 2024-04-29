@@ -1,17 +1,39 @@
 import React from "react";
 import "./SlaylistCard.css";
-import Preloader from "../Preloader/Preloader";
-// import topSlaylists from "../../utils/constants";
+import { useState } from "react";
 
 const SlaylistCard = ({ item, onSelectedSlaylistCard }) => {
-  // console.log(topSlaylists);
+  const [isLiked, setIsLiked] = useState(false);
+
+  function handleLike(e) {
+    // When there is a backend, this could be an API call to update the likes for this Slaylist row in the database
+    // For now, it's just a visual change
+    // Currently it "communicates" with the SlaylistModal component to display updates to Likes but not the SlaylistModal will not reciprocate updates to the SlaylistCard component
+    e.stopPropagation(); // to prevent the modal from opening if you don't want it to
+    setIsLiked(!isLiked);
+  }
 
   return (
-    <div className="slaylist-card" onClick={() => onSelectedSlaylistCard(item)}>
+    <div
+      className="slaylist-card"
+      onClick={() => onSelectedSlaylistCard(item, isLiked)}
+    >
       <div className="slaylist-card__content">
         <div className="slaylist-card__flex-container">
           <div className="slaylist-card__title-tagline-likes-container">
-            <p className="slaylist-card__likes">♡ {item.likes}</p>
+            <div className="slaylist-card__likes-container">
+              {/* ♡ */}
+              <button
+                className={`slaylist-card__like-button ${
+                  isLiked ? "slaylist-card__like-button_active" : ""
+                }`}
+                type="button"
+                onClick={handleLike}
+              ></button>
+              <p className="slaylist-card__likes">
+                {isLiked ? item.likes + 1 : item.likes}
+              </p>
+            </div>
             <div className="slaylist-card__title-tagline-container">
               <h3 className="slaylist-card__title">{item.title}</h3>
               <p className="slaylist-card__tagline">{item.tagline}</p>
@@ -26,5 +48,4 @@ const SlaylistCard = ({ item, onSelectedSlaylistCard }) => {
     </div>
   );
 };
-
 export default SlaylistCard;
