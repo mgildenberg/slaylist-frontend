@@ -46,3 +46,19 @@
   color: white; */
   border: solid white 2px;
 }
+
+@media screen and (max-width: 321px) {
+  .nav__button {
+    min-width: 50px;
+    font-size: 12px;
+    border: none;
+    backdrop-filter: none;
+  }
+
+  .nav__link {
+    min-width: 50px;
+    font-size: 12px;
+    border: none;
+    backdrop-filter: none;
+  }
+}

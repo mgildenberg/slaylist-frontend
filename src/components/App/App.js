@@ -13,6 +13,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Dashboard from "../Dashboard/Dashboard";
 import NewSlaylist from "../NewSlaylist/NewSlaylist";
 import LogoutConfirmationModal from "../LogoutConfirmationModal/LogoutConfirmationModal";
+import LoginAlertModal from "../LoginAlertModal/LoginAlertModal";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { CurrentScreenSizeContext } from "../../contexts/ScreenSizeContext";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -23,6 +24,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedSlaylistCard, setSelectedSlaylistCard] = useState({});
   const [isSlaylistLiked, setIsSlaylistLiked] = useState(false);
+  const [likeButtonOrigin, setLikeButtonOrigin] = useState("");
   const [currentScreenWidth, setCurrentScreenWidth] = useState(
     window.innerWidth
   );
@@ -136,6 +138,23 @@ function App() {
     setIsLoggedIn(false);
   }
 
+  function handleIsNotLoggedIn(likeButtonClassName) {
+    // request.preventDefault();
+    setLikeButtonOrigin(likeButtonClassName);
+    console.log("likeButtonClassName", likeButtonClassName);
+    setActiveModal("login-alert");
+  }
+
+  function handleLoginAlert(request) {
+    request.preventDefault();
+    // console.log(request);
+    // setActiveModal("login-alert");
+    setActiveModal("signin");
+    console.log("login alert modal action");
+    // history.push("/");
+    // handleCloseModal();
+  }
+
   useEffect(() => {
     if (!activeModal) return; // stop the effect not to add the listener if there is no active modal
     const handleEscClose = (e) => {
@@ -179,7 +198,11 @@ function App() {
           />
           <Switch>
             <Route exact path="/">
-              <Main onSelectedSlaylistCard={handleSelectedSlaylistCard} />
+              <Main
+                onSelectedSlaylistCard={handleSelectedSlaylistCard}
+                isLoggedin={isLoggedIn}
+                onNotLoggedIn={handleIsNotLoggedIn}
+              />
             </Route>
             <ProtectedRoute path="/dashboard" loggedIn={isLoggedIn}>
               <Dashboard onSelectedSlaylistCard={handleSelectedSlaylistCard} />
@@ -219,6 +242,8 @@ function App() {
               selectedSlaylistCard={selectedSlaylistCard}
               isLiked={isSlaylistLiked}
               onClose={handleCloseModal}
+              isLoggedIn={isLoggedIn}
+              onNotLoggedIn={handleIsNotLoggedIn}
             />
           )}
           {activeModal === "logout-confirm" && (
@@ -230,6 +255,18 @@ function App() {
               onAltClick={handleAltModal}
               // selectedSlaylistCard={selectedSlaylistCard}
               onClose={handleCloseModal}
+            />
+          )}
+          {activeModal === "login-alert" && (
+            <LoginAlertModal
+              handleCloseModal={handleCloseModal}
+              isOpen={activeModal === "login-alert"}
+              onLoginAlert={handleLoginAlert}
+              onAltClick={handleAltModal}
+              onLogin={handleLoginModal}
+              onClose={handleCloseModal}
+              // onCloseFromSlaylistModal={handleCloseLoginAlertModal}
+              likeButtonOrigin={likeButtonOrigin}
             />
           )}
         </div>

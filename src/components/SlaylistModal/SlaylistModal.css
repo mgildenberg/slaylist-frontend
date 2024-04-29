@@ -11,13 +11,6 @@
 }
 
 .slaylist-modal__content {
-  /* background-color: #fff;
-  max-width: 650px;
-  width: 100%;
-  border-radius: 20px;
-  padding: 34px 36px;
-  position: relative; */
-
   background-color: #fff;
   max-width: 800px;
   width: 100%;
@@ -56,22 +49,6 @@
   margin-top: 0;
 }
 
-/* section copied from SlaylistCard for time being */
-
-/* .slaylist-modal {
-  border: solid #d6d9f1 1px;
-  background-color: #d6d9f1;
-  border-radius: 20px;
-  width: 100%;
-  margin-bottom: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-} */
-
-/* .slaylist-modal:hover {
-  border: solid #c01e58 2px;
-} */
-
 .slaylist-modal__flex-container {
   display: flex;
   justify-content: space-between;
@@ -88,10 +65,12 @@
   gap: 15px;
 }
 
-/* .slaylist-modal__content {
-  padding-left: 15px;
-  padding-right: 15px;
-} */
+.slaylist-modal__likes-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0;
+}
 
 .slaylist-modal__title {
   margin: 0;
@@ -125,8 +104,6 @@
 }
 
 .slaylist-modal__source-info-container {
-  /* margin-right: 10px; */
-  /* flex-basis: auto; */
   display: flex;
   flex-direction: column;
   text-align: right;

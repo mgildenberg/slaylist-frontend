@@ -2,24 +2,9 @@ import React from "react";
 import "./Main.css";
 import { topSlaylists } from "../../utils/constants";
 import SlaylistCard from "../SlaylistCard/SlaylistCard";
-import { useState, useEffect } from "react";
 
-const Main = ({ onSelectedSlaylistCard }) => {
-  // console.log(onSelectedSlaylistCard);
-  // console.log(topSlaylists);
+const Main = ({ onSelectedSlaylistCard, isLoggedIn, onNotLoggedIn }) => {
   const sortedSlaylists = topSlaylists.sort((a, b) => b.likes - a.likes);
-
-  // const [isLiked, setIsLiked] = useState(false);
-
-  // useEffect(() => {
-  //   const handleLike = (e) => {
-  //     if (e.target.classList.value.endsWith("like__button")) {
-  //       console.log("like button clicked");
-  //       console.log(e.target.classList.value);
-  //       setIsLiked(!isLiked);
-  //     }
-  //   };
-  // }, [isLiked]);
 
   return (
     <main className="main">
@@ -36,6 +21,9 @@ const Main = ({ onSelectedSlaylistCard }) => {
               item={item}
               onSelectedSlaylistCard={onSelectedSlaylistCard}
               key={item._id}
+              isLoggedIn={isLoggedIn}
+              onNotLoggedIn={onNotLoggedIn}
+              name="SlaylistCard"
             />
           );
         })}

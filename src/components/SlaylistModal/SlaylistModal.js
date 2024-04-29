@@ -4,11 +4,16 @@ import { defaultChannels } from "../../utils/constants";
 import { useState, useContext, useEffect } from "react";
 import { CurrentScreenSizeContext } from "../../contexts/ScreenSizeContext";
 
-const SlaylistModal = ({ selectedSlaylistCard, onClose, isLiked }) => {
+const SlaylistModal = ({
+  selectedSlaylistCard,
+  onClose,
+  isLiked,
+  isLoggedIn,
+  onNotLoggedIn,
+}) => {
   // For now the filter for data is coming from the default array of data and the only qualifier is the ID exists.
   // When I make the backend, slaylets will be pulled from the database based on matching to the slaylist ID.
   const data = defaultChannels.filter((channel) => channel.slaylist_id);
-  // console.log(data);
   const slaylets = data.map((slaylet) => {
     return (
       <Slaylet
@@ -28,20 +33,24 @@ const SlaylistModal = ({ selectedSlaylistCard, onClose, isLiked }) => {
     </div>
   );
 
-  // This context will allow the code to move certain elements around based on screen size
+  // This context will allow the code to move certain elements (the Like button) around based on screen size
   const { currentScreenWidth } = useContext(CurrentScreenSizeContext);
 
   const smallScreen = currentScreenWidth <= 479 ? true : false;
 
   const [isSlaylistModalLiked, setIsSlaylistModalLiked] = useState(isLiked);
-  console.log("isSlaylistModalLiked", isSlaylistModalLiked);
 
   function handleLike(e) {
+    if (!isLoggedIn) {
+      // Can view a slaylist but cannot Like if the user is not logged in
+      e.stopPropagation(); // to prevent the modal from opening if you don't want it to
+      onNotLoggedIn("SlaylistModal");
+      return;
+    }
     // When there is a backend, this could be an API call to update the likes for this card in the database
     // For now, it's just a visual change
     // It does not communicate back to the SlaylistCard component
     e.stopPropagation(); // to prevent the modal from opening if you don't want it to
-    console.log("like button clicked on Slaylist Modal");
     setIsSlaylistModalLiked(!isSlaylistModalLiked);
   }
 

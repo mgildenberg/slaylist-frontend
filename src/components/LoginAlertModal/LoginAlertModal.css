@@ -1,0 +1,19 @@
+.login-alert-modal__alternative-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border-color: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-top: 32px;
+  margin-left: 10px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #ac124a;
+}
+
+.login-alert-modal__alternative-button:hover {
+  background-color: #c01e58;
+}

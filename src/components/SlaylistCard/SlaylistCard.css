@@ -102,6 +102,17 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 767px) {
+  .slaylist-card__owner {
+    /* font-size: 10px; */
+    font-size: 0.7rem;
+  }
+
+  .slaylist-card__date-created {
+    font-size: 0.7rem;
+  }
+}
+
 @media screen and (max-width: 479px) {
   .slaylist-card {
     max-width: (90%, 400px);

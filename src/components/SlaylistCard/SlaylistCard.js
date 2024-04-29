@@ -2,10 +2,23 @@ import React from "react";
 import "./SlaylistCard.css";
 import { useState } from "react";
 
-const SlaylistCard = ({ item, onSelectedSlaylistCard }) => {
+const SlaylistCard = ({
+  item,
+  onSelectedSlaylistCard,
+  isLoggedIn,
+  onNotLoggedIn,
+}) => {
   const [isLiked, setIsLiked] = useState(false);
 
   function handleLike(e) {
+    if (!isLoggedIn) {
+      console.log("SlaylistCard testing for closing", e.target.className);
+      // Can view a slaylist but cannot Like if the user is not logged in
+      e.stopPropagation(); // to prevent the modal from opening if you don't want it to
+      onNotLoggedIn("SlaylistCard");
+      return;
+    }
+
     // When there is a backend, this could be an API call to update the likes for this Slaylist row in the database
     // For now, it's just a visual change
     // Currently it "communicates" with the SlaylistModal component to display updates to Likes but not the SlaylistModal will not reciprocate updates to the SlaylistCard component

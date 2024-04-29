@@ -3,6 +3,7 @@ import "./ModalWithForm.css";
 const ModalWithForm = ({
   children,
   buttonText = "Submit",
+
   title,
   onClose,
   name,
@@ -11,6 +12,8 @@ const ModalWithForm = ({
   isLoading,
   alternativeText,
   handleAltClick,
+  altButtonStyle = "modal__alternative-button",
+  onClickFromSlaylistModal,
 }) => {
   return (
     <div className={`modal modal_type_${name}`}>
@@ -32,7 +35,7 @@ const ModalWithForm = ({
             {alternativeText && (
               <p>
                 <button
-                  className="modal__alternative-button"
+                  className={altButtonStyle}
                   type="button"
                   onClick={handleAltClick}
                 >
