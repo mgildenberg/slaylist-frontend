@@ -3,8 +3,7 @@ import "./Main.css";
 import { topSlaylists } from "../../utils/constants";
 import SlaylistCard from "../SlaylistCard/SlaylistCard";
 
-const Main = ({ onSelectedSlaylistCard, isLoggedIn, onNotLoggedIn }) => {
-  console.log("Main isLoggedIn prop", isLoggedIn);
+const Main = ({ onSelectedSlaylistCard, onNotLoggedIn }) => {
   const sortedSlaylists = topSlaylists.sort((a, b) => b.likes - a.likes);
 
   return (
@@ -22,7 +21,6 @@ const Main = ({ onSelectedSlaylistCard, isLoggedIn, onNotLoggedIn }) => {
               item={item}
               onSelectedSlaylistCard={onSelectedSlaylistCard}
               key={item._id}
-              isLoggedIn={isLoggedIn}
               onNotLoggedIn={onNotLoggedIn}
               name="SlaylistCard"
             />

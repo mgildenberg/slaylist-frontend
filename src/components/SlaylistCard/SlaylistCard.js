@@ -1,22 +1,16 @@
-import React from "react";
+import { React, useState, useContext } from "react";
 import "./SlaylistCard.css";
-import { useState } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
-const SlaylistCard = ({
-  item,
-  onSelectedSlaylistCard,
-  isLoggedIn,
-  onNotLoggedIn,
-}) => {
+const SlaylistCard = ({ item, onSelectedSlaylistCard, onNotLoggedIn }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const { currentUser } = useContext(UserContext);
 
   function handleLike(e) {
-    console.log("SlaylistCard isLoggedIn prop", isLoggedIn);
-    if (!isLoggedIn) {
-      console.log("SlaylistCard testing for closing", e.target.className);
+    if (currentUser == "") {
       // Can view a slaylist but cannot Like if the user is not logged in
       e.stopPropagation(); // to prevent the modal from opening if you don't want it to
-      onNotLoggedIn("SlaylistCard", isLoggedIn);
+      onNotLoggedIn("SlaylistCard");
       return;
     }
 

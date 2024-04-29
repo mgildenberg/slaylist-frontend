@@ -2,15 +2,18 @@ import "./SlaylistModal.css";
 import Slaylet from "../Slaylet/Slaylet";
 import { defaultChannels } from "../../utils/constants";
 import { useState, useContext, useEffect } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import { CurrentScreenSizeContext } from "../../contexts/ScreenSizeContext";
 
 const SlaylistModal = ({
   selectedSlaylistCard,
   onClose,
   isLiked,
-  isLoggedIn,
+  // isLoggedIn,
   onNotLoggedIn,
 }) => {
+  const { currentUser } = useContext(UserContext);
+
   // For now the filter for data is coming from the default array of data and the only qualifier is the ID exists.
   // When I make the backend, slaylets will be pulled from the database based on matching to the slaylist ID.
   const data = defaultChannels.filter((channel) => channel.slaylist_id);
@@ -41,7 +44,7 @@ const SlaylistModal = ({
   const [isSlaylistModalLiked, setIsSlaylistModalLiked] = useState(isLiked);
 
   function handleLike(e) {
-    if (!isLoggedIn) {
+    if (currentUser == "") {
       // Can view a slaylist but cannot Like if the user is not logged in
       e.stopPropagation(); // to prevent the modal from opening if you don't want it to
       onNotLoggedIn("SlaylistModal");

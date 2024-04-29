@@ -34,9 +34,8 @@ const LoginAlertModal = ({
       title="Login to Like Slaylists"
       buttonText="Login"
       name="Login"
-      //onClose={handleCloseModal} //it has to be onClose because ModalWithForm has that as a param, handleCloseModal is coming from App.js
-      // TESTING
-      // onClose={onCloseFromSlaylistModal}
+      //it has to be onClose because ModalWithForm has that as a param, handleCloseModal is coming from App.js
+
       onClose={handleCloseBasedOnOrigin}
       onLoginAlert={onLoginAlert}
       isOpen={isOpen}

@@ -23,6 +23,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState("");
   const [selectedSlaylistCard, setSelectedSlaylistCard] = useState({});
   const [isSlaylistLiked, setIsSlaylistLiked] = useState(false);
   const [likeButtonOrigin, setLikeButtonOrigin] = useState("");
@@ -110,6 +111,7 @@ function App() {
     console.log("registering");
     // signUp(request) goes here
     setIsLoggedIn(true);
+    setCurrentUser("ampersand");
     handleCloseModal(true);
     setIsLoading(false);
   }
@@ -119,6 +121,7 @@ function App() {
     setIsLoading(true);
     console.log("logging in");
     // signIn(request) goes here
+    setCurrentUser("ampersand");
     setIsLoggedIn(true);
     handleCloseModal(true);
     setIsLoading(false);
@@ -137,27 +140,20 @@ function App() {
     handleCloseModal();
     // signOut(request) goes here
     setIsLoggedIn(false);
+    setCurrentUser("");
   }
 
-  function handleIsNotLoggedIn(likeButtonClassName, isLoggedInProp) {
-    // just added isLoggedIn as an arg
-    // request.preventDefault();
-    console.log("handleIsNotLoggedIn function", isLoggedInProp);
-    setLikeButtonOrigin(likeButtonClassName);
-    // console.log("likeButtonClassName", likeButtonClassName);
-    if (!isLoggedInProp && !isLoggedIn) {
+  function handleIsNotLoggedIn(likeButtonComponent) {
+    setLikeButtonOrigin(likeButtonComponent);
+    if (currentUser == "") {
       setActiveModal("login-alert");
     }
   }
 
   function handleLoginAlert(request) {
     request.preventDefault();
-    // console.log(request);
-    // setActiveModal("login-alert");
     setActiveModal("signin");
     console.log("login alert modal action");
-    // history.push("/");
-    // handleCloseModal();
   }
 
   useEffect(() => {
@@ -193,93 +189,92 @@ function App() {
     <CurrentScreenSizeContext.Provider
       value={{ currentScreenWidth, currentScreenHeight }}
     >
-      <div className="page">
-        <div className="App">
-          <Header
-            onRegisterModal={handleRegisterModal}
-            onLoginModal={handleLoginModal}
-            isLoggedIn={isLoggedIn}
-            onClickLogout={handleClickLogout}
-          />
-          <Switch>
-            <Route exact path="/">
-              <Main
-                onSelectedSlaylistCard={handleSelectedSlaylistCard}
-                isLoggedin={isLoggedIn}
-                onNotLoggedIn={handleIsNotLoggedIn}
-              />
-            </Route>
-            <ProtectedRoute path="/dashboard" loggedIn={isLoggedIn}>
-              <Dashboard
-                onSelectedSlaylistCard={handleSelectedSlaylistCard}
-                isLoggedin={isLoggedIn}
-                onNotLoggedIn={handleIsNotLoggedIn}
-              />
-            </ProtectedRoute>
-            <ProtectedRoute path="/new-slaylist" loggedIn={isLoggedIn}>
-              <NewSlaylist onSubmit={handleSlaylistSubmit} />
-            </ProtectedRoute>
-            <Route>
-              <PageNotFound />
-            </Route>
-          </Switch>
-
-          <Footer />
-          {activeModal === "register" && (
-            <RegisterModal
-              handleCloseModal={handleCloseModal}
-              onRegistration={handleRegistration}
-              isOpen={activeModal === "register"}
-              isLoading={isLoading}
-              onAltClick={handleAltModal}
-            />
-          )}
-          {activeModal === "signin" && (
-            <LoginModal
-              handleCloseModal={handleCloseModal}
-              onLogin={handleLogin}
-              isOpen={activeModal === "signin"}
-              isLoading={isLoading}
-              onAltClick={handleAltModal}
-            />
-          )}
-          {activeModal === "slaylist" && (
-            <SlaylistModal
-              handleCloseModal={handleCloseModal}
-              // onLogin={handleLogin}
-              isOpen={activeModal === "slaylist"}
-              selectedSlaylistCard={selectedSlaylistCard}
-              isLiked={isSlaylistLiked}
-              onClose={handleCloseModal}
+      <UserContext.Provider value={{ currentUser }}>
+        <div className="page">
+          <div className="App">
+            <Header
+              onRegisterModal={handleRegisterModal}
+              onLoginModal={handleLoginModal}
               isLoggedIn={isLoggedIn}
-              onNotLoggedIn={handleIsNotLoggedIn}
+              onClickLogout={handleClickLogout}
             />
-          )}
-          {activeModal === "logout-confirm" && (
-            <LogoutConfirmationModal
-              handleCloseModal={handleCloseModal}
-              // onLogin={handleLogin}
-              isOpen={activeModal === "logout-confirm"}
-              onLogoutConfirmation={handleConfirmLogout}
-              onAltClick={handleAltModal}
-              // selectedSlaylistCard={selectedSlaylistCard}
-              onClose={handleCloseModal}
-            />
-          )}
-          {activeModal === "login-alert" && (
-            <LoginAlertModal
-              handleCloseModal={handleCloseModal}
-              isOpen={activeModal === "login-alert"}
-              onLoginAlert={handleLoginAlert}
-              onAltClick={handleAltModal}
-              onLogin={handleLoginModal}
-              onClose={handleCloseModal}
-              // onCloseFromSlaylistModal={handleCloseLoginAlertModal}
-              likeButtonOrigin={likeButtonOrigin}
-            />
-          )}
+            <Switch>
+              <Route exact path="/">
+                <Main
+                  onSelectedSlaylistCard={handleSelectedSlaylistCard}
+                  onNotLoggedIn={handleIsNotLoggedIn}
+                />
+              </Route>
+              <ProtectedRoute path="/dashboard" loggedIn={isLoggedIn}>
+                <Dashboard
+                  onSelectedSlaylistCard={handleSelectedSlaylistCard}
+                  onNotLoggedIn={handleIsNotLoggedIn}
+                />
+              </ProtectedRoute>
+              <ProtectedRoute path="/new-slaylist" loggedIn={isLoggedIn}>
+                <NewSlaylist onSubmit={handleSlaylistSubmit} />
+              </ProtectedRoute>
+              <Route>
+                <PageNotFound />
+              </Route>
+            </Switch>
+
+            <Footer />
+            {activeModal === "register" && (
+              <RegisterModal
+                handleCloseModal={handleCloseModal}
+                onRegistration={handleRegistration}
+                isOpen={activeModal === "register"}
+                isLoading={isLoading}
+                onAltClick={handleAltModal}
+              />
+            )}
+            {activeModal === "signin" && (
+              <LoginModal
+                handleCloseModal={handleCloseModal}
+                onLogin={handleLogin}
+                isOpen={activeModal === "signin"}
+                isLoading={isLoading}
+                onAltClick={handleAltModal}
+              />
+            )}
+            {activeModal === "slaylist" && (
+              <SlaylistModal
+                handleCloseModal={handleCloseModal}
+                // onLogin={handleLogin}
+                isOpen={activeModal === "slaylist"}
+                selectedSlaylistCard={selectedSlaylistCard}
+                isLiked={isSlaylistLiked}
+                onClose={handleCloseModal}
+                // isLoggedIn={isLoggedIn}
+                onNotLoggedIn={handleIsNotLoggedIn}
+              />
+            )}
+            {activeModal === "logout-confirm" && (
+              <LogoutConfirmationModal
+                handleCloseModal={handleCloseModal}
+                // onLogin={handleLogin}
+                isOpen={activeModal === "logout-confirm"}
+                onLogoutConfirmation={handleConfirmLogout}
+                onAltClick={handleAltModal}
+                // selectedSlaylistCard={selectedSlaylistCard}
+                onClose={handleCloseModal}
+              />
+            )}
+            {activeModal === "login-alert" && (
+              <LoginAlertModal
+                handleCloseModal={handleCloseModal}
+                isOpen={activeModal === "login-alert"}
+                onLoginAlert={handleLoginAlert}
+                onAltClick={handleAltModal}
+                onLogin={handleLoginModal}
+                onClose={handleCloseModal}
+                likeButtonOrigin={likeButtonOrigin}
+              />
+            )}
+          </div>
         </div>
-      </div>
+      </UserContext.Provider>
     </CurrentScreenSizeContext.Provider>
   );
 }

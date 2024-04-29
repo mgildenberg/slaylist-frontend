@@ -4,7 +4,7 @@ import { topSlaylists } from "../../utils/constants";
 import SlaylistCard from "../SlaylistCard/SlaylistCard";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-const Dashboard = ({ onSelectedSlaylistCard, onNotLoggedIn, isLoggedIn }) => {
+const Dashboard = ({ onSelectedSlaylistCard, onNotLoggedIn }) => {
   const me = "ampersand";
   const mySlaylists = topSlaylists.filter((item) => item.owner_id === me);
   const history = useHistory();
@@ -17,7 +17,6 @@ const Dashboard = ({ onSelectedSlaylistCard, onNotLoggedIn, isLoggedIn }) => {
         </h1>
       </div>
       <div className="slaylist-container">
-        {/* <div className="new-slaylist-button"> */}
         <button
           className="slaylist-card new-slaylist-btn"
           type="button"
@@ -33,7 +32,6 @@ const Dashboard = ({ onSelectedSlaylistCard, onNotLoggedIn, isLoggedIn }) => {
               item={item}
               onSelectedSlaylistCard={onSelectedSlaylistCard}
               key={item._id}
-              isLoggedIn={true}
               onNotLoggedIn={onNotLoggedIn}
               name="SlaylistCard"
             />

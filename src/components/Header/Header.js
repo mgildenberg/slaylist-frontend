@@ -1,13 +1,14 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
-import React from "react";
+import { React, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 const Header = ({
   onRegisterModal,
   onLoginModal,
-  isLoggedIn,
   onClickLogout,
+  isLoggedIn,
 }) => {
   return (
     <header className="header">
@@ -17,8 +18,8 @@ const Header = ({
       <Navigation
         onRegisterModal={onRegisterModal}
         onLoginModal={onLoginModal}
-        isLoggedIn={isLoggedIn}
         onClickLogout={onClickLogout}
+        isLoggedIn={isLoggedIn}
       />
     </header>
   );
