@@ -1,7 +1,7 @@
 import "./SlaylistModal.css";
 import Slaylet from "../Slaylet/Slaylet";
 import { defaultChannels } from "../../utils/constants";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { CurrentScreenSizeContext } from "../../contexts/ScreenSizeContext";
 
@@ -44,7 +44,7 @@ const SlaylistModal = ({
   const [isSlaylistModalLiked, setIsSlaylistModalLiked] = useState(isLiked);
 
   function handleLike(e) {
-    if (currentUser == "") {
+    if (currentUser === "") {
       // Can view a slaylist but cannot Like if the user is not logged in
       e.stopPropagation(); // to prevent the modal from opening if you don't want it to
       onNotLoggedIn("SlaylistModal");

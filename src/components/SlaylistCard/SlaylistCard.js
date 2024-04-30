@@ -7,7 +7,7 @@ const SlaylistCard = ({ item, onSelectedSlaylistCard, onNotLoggedIn }) => {
   const { currentUser } = useContext(UserContext);
 
   function handleLike(e) {
-    if (currentUser == "") {
+    if (currentUser === "") {
       // Can view a slaylist but cannot Like if the user is not logged in
       e.stopPropagation(); // to prevent the modal from opening if you don't want it to
       onNotLoggedIn("SlaylistCard");

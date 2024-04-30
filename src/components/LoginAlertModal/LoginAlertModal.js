@@ -12,7 +12,7 @@ const LoginAlertModal = ({
   likeButtonOrigin,
 }) => {
   const handleCloseBasedOnOrigin = () => {
-    if (likeButtonOrigin == "SlaylistModal") {
+    if (likeButtonOrigin === "SlaylistModal") {
       // if you close the Login Alert Modal from the SlaylistModal, it will take you back to the Slaylist Modal for viewing
       onAltClick("slaylist");
     } else {

@@ -1,8 +1,7 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
-import { React, useContext } from "react";
-import { UserContext } from "../../contexts/UserContext";
+import { React } from "react";
 
 const Header = ({
   onRegisterModal,

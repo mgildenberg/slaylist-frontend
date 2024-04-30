@@ -144,7 +144,7 @@ function App() {
 
   function handleIsNotLoggedIn(likeButtonComponent) {
     setLikeButtonOrigin(likeButtonComponent);
-    if (currentUser == "") {
+    if (currentUser === "") {
       setActiveModal("login-alert");
     }
   }

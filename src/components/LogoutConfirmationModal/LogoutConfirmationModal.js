@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const LogoutConfirmationModal = ({
@@ -8,26 +8,6 @@ const LogoutConfirmationModal = ({
   isLoading,
   onAltClick,
 }) => {
-  //   const [email, setEmail] = useState("");
-
-  //   const handleEmailChange = (e) => {
-  //     // console.log(e.target.value);
-  //     setEmail(e.target.value);
-  //   };
-
-  //   const [password, setPassword] = useState("");
-
-  //   const handlePasswordChange = (e) => {
-  //     // console.log(e.target.value);
-  //     setPassword(e.target.value);
-  //   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log("LogoutConfirmation form entries", { email, password });
-    onLogoutConfirmation();
-  };
-
   const handleAltClick = (e) => {
     e.preventDefault();
     console.log("in handleAltClick");

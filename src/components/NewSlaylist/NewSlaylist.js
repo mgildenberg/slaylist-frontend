@@ -10,12 +10,12 @@ const NewSlaylist = ({
   isLoading,
 }) => {
   const [title, setTitle] = useState("");
-  const [slaylistSubmitRequest, setSlaylistSubmitRequest] = useState({
-    title: "",
-    tagline: "",
-    category: "",
-    slaylets: [],
-  });
+  // const [slaylistSubmitRequest, setSlaylistSubmitRequest] = useState({
+  //   title: "",
+  //   tagline: "",
+  //   category: "",
+  //   slaylets: [],
+  // });
 
   const handleTitleChange = (e) => {
     // console.log(e.target.value);

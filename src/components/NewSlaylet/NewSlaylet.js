@@ -1,20 +1,12 @@
 import "./NewSlaylet.css";
 import { React, useState } from "react";
 
-const NewSlaylet = (
-  {
-    // children,
-    // buttonText = "Submit Slaylet",
-    // onSubmit,
-    // isLoading,
-    // category,
-  }
-) => {
-  const [handle, sethandle] = useState("");
+const NewSlaylet = () => {
+  const [handle, setHandle] = useState("");
 
-  const handlehandleChange = (e) => {
+  const handleHandleChange = (e) => {
     // console.log(e.target.value);
-    sethandle(e.target.value);
+    setHandle(e.target.value);
   };
 
   const [notes, setNotes] = useState("");
@@ -37,7 +29,7 @@ const NewSlaylet = (
           name="handle"
           placeholder="Account handle, i.e. TomScottGo"
           value={handle}
-          onChange={handlehandleChange}
+          onChange={handleHandleChange}
           required
         />
       </label>
