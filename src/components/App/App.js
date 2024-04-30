@@ -8,7 +8,6 @@ import Footer from "../Footer/Footer";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import SlaylistModal from "../SlaylistModal/SlaylistModal";
-// import SlaylistCard from "../SlaylistCard/SlaylistCard";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Dashboard from "../Dashboard/Dashboard";
 import NewSlaylist from "../NewSlaylist/NewSlaylist";

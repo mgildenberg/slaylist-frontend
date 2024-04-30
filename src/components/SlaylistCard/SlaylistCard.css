@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../vendor/fonts/Inter/Inter-Regular.woff2") format("woff2"),
+    url("../../vendor/fonts/Inter/Inter-Regular.woff") format("woff");
+}
+
 .slaylist-card {
   border: solid #d6d9f1 1px;
   /* background-color: #d6d9f1; */
@@ -40,6 +46,7 @@
 .slaylist-card__tagline {
   margin: 0;
   padding-top: 5px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -56,6 +63,7 @@
   flex-direction: column;
   text-align: right;
   gap: 10px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 .slaylist-card__owner {
@@ -80,7 +88,7 @@
   margin: 0;
   font-size: 14px;
   text-align: center;
-  padding-top: 1px;
+  padding-top: 3px;
 }
 
 .slaylist-card__like-button {

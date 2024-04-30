@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../vendor/fonts/Inter/Inter-Regular.woff2") format("woff2"),
+    url("../../vendor/fonts/Inter/Inter-Regular.woff") format("woff");
+}
+
 .new-slaylist {
   background-color: #fff;
   max-width: 800px;
@@ -23,7 +29,8 @@
   border: none;
   border-radius: 5px;
   margin-top: 32px;
-  font-family: "Cabinet Grotesk", sans-serif;
+  /* font-family: "Cabinet Grotesk", sans-serif; */
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700;
   background-color: #ac124a;
@@ -45,7 +52,7 @@
   border: none;
   border-radius: 5px;
   /* margin-top: 32px; */
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700;
   background-color: pink;

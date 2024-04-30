@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../vendor/fonts/Inter/Inter-Regular.woff2") format("woff2"),
+    url("../../vendor/fonts/Inter/Inter-Regular.woff") format("woff");
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -17,6 +23,7 @@
   border-radius: 20px;
   padding: 34px 36px;
   position: relative;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 .modal__close-button {
@@ -67,6 +74,7 @@
   background: none;
   font-weight: 700;
   border: none;
+  cursor: pointer;
 }
 
 .modal__submit-button:hover {

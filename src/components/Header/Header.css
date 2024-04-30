@@ -1,6 +1,7 @@
 @font-face {
-  src: url("../../vendor/fonts/Inter-Medium.woff") format("woff");
-  font-family: "Inter Medium";
+  src: url("../../../src/vendor/fonts/Philosopher/Philosopher-BoldItalic.woff")
+    format("woff");
+  font-family: "Philosopher";
 }
 
 .header {
@@ -11,8 +12,9 @@
   /* background-color: #090839; */
   /* padding-top: 0; */
   /* font-family: "Cabinet Grotesk - Medium"; */
-  font-family: "Inter Medium";
-  font-weight: 700;
+  /* font-family: "Inter Medium"; */
+  font-family: "Philosopher", serif;
+  /* font-weight: 500; */
   font-size: 20px;
   /* width: 100%; */
   width: 100%;

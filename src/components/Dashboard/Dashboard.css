@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../vendor/fonts/Inter/Inter-Regular.woff2") format("woff2"),
+    url("../../vendor/fonts/Inter/Inter-Regular.woff") format("woff");
+}
+
 .dashboard {
   width: 100%;
   padding-top: 10px;
@@ -26,10 +32,11 @@
   background-color: #ac124a;
   border-color: #ac124a;
   color: white;
-  font-style: bold;
+  font-weight: 700;
   margin-bottom: 5px;
   min-height: 60px;
   font-size: 19px;
+  font-family: "Inter", sans-serif;
 }
 
 .new-slaylist-btn:hover {

@@ -1,3 +1,8 @@
+@font-face {
+  src: url("../../../src/vendor/fonts/Mulish/Mulish-Bold.woff") format("woff");
+  font-family: "Mulish";
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -12,6 +17,7 @@
   background-color: rgb(214, 217, 241, 0.2);
   border-radius: 50px;
   color: white; /* font-weight: 700; */
+  font-family: "Mulish", Arial, Helvetica, sans-serif;
   font-size: 15px;
   padding: 10px;
   backdrop-filter: blur(8px);
@@ -33,6 +39,7 @@
   color: white;
   padding: 10px;
   font-weight: normal;
+  font-family: "Mulish", Arial, Helvetica, sans-serif;
   /* font-weight: 700; */
   font-size: 15px;
   backdrop-filter: blur(4px);
