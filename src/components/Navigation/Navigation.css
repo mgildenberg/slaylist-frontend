@@ -54,7 +54,7 @@
   border: solid white 2px;
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 370px) {
   .nav__button {
     min-width: 50px;
     font-size: 12px;
