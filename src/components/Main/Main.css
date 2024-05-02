@@ -1,0 +1,29 @@
+.main {
+  /* border: solid black 1px; */
+  /* margin: 20px; */
+  width: 100%;
+  padding-top: 10px;
+  /* background-color: #090839; */
+  /* height: 100vh; */
+  /* padding-bottom: 2.5rem; */
+  /* overflow: hidden;  */
+}
+
+.slaylist-container {
+  padding-top: 10px;
+  /* margin-right: 10px;
+  margin-left: 10px; */
+  max-width: 1000px;
+  margin: 0 auto;
+  /* width: 100vw; */
+}
+
+.main__content {
+  padding-left: 10px;
+  color: #d6d9f1;
+}
+
+.main__tagline {
+  font-size: 19px;
+  color: white;
+}

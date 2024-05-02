@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../vendor/fonts/Inter/Inter-Regular.woff2") format("woff2"),
+    url("../../vendor/fonts/Inter/Inter-Regular.woff") format("woff");
+}
+
+.dashboard {
+  width: 100%;
+  padding-top: 10px;
+  overflow: auto;
+}
+
+.slaylist-container {
+  padding-top: 10px;
+  max-width: 1000px;
+  width: 99%;
+  /* width: 95%; */
+  margin: 0 auto;
+}
+
+.dashboard__content {
+  padding-left: 10px;
+  color: #d6d9f1;
+}
+
+.dashboard__tagline {
+  font-size: 19px;
+  color: white;
+}
+
+.new-slaylist-btn {
+  background-color: #ac124a;
+  border-color: #ac124a;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 5px;
+  min-height: 60px;
+  font-size: 19px;
+  font-family: "Inter", sans-serif;
+}
+
+.new-slaylist-btn:hover {
+  border: solid #d6d9f1 2px;
+  color: #ac124a;
+}

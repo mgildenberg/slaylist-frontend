@@ -1,0 +1,56 @@
+.new-slaylet {
+  padding: 15px;
+  /* border: solid #ac124a 2px; */
+  border-radius: 10px;
+  background-color: #ebe8e8;
+  margin-bottom: 15px;
+}
+
+.new-slaylet__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-slaylet__input {
+  /* width: 100%;
+  height: 30px;
+  box-sizing: border-box; */
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  outline: none;
+  appearance: none;
+  border-style: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  margin-top: 7px;
+  /* margin-bottom: 25px; */
+  width: 100%;
+}
+
+.new-slaylet__input-label {
+  /* padding-top: 5px; */
+  /* padding-bottom: 2px; */
+}
+
+.new-slaylet__input_notes {
+  width: 100%;
+  height: 100px;
+  margin-top: 7px;
+  /* box-sizing: border-box;
+  resize: none; */
+  /* text-align: left; Aligns text to the left */
+  resize: none;
+  color: rgba(0, 0, 0, 0.1);
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border-style: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  color: inherit;
+}
+
+.new-slaylet__input_notes::placeholder {
+  /* text-align: left; */
+}

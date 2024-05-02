@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../vendor/fonts/Inter/Inter-Regular.woff2") format("woff2"),
+    url("../../vendor/fonts/Inter/Inter-Regular.woff") format("woff");
+}
+
+.slaylist-card {
+  border: solid #d6d9f1 1px;
+  /* background-color: #d6d9f1; */
+  background-color: rgb(214, 217, 241, 0.6);
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.slaylist-card:hover {
+  /* border: solid #c01e58 2px; */
+  background-color: rgb(214, 217, 241, 1);
+}
+
+.slaylist-card__flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.slaylist-card__title-tagline-likes-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.slaylist-card__content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.slaylist-card__title {
+  margin: 0;
+}
+
+.slaylist-card__tagline {
+  margin: 0;
+  padding-top: 5px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to display before truncating */
+  -webkit-box-orient: vertical;
+}
+
+.slaylist-card__source-info-container {
+  /* margin-right: 10px; */
+  /* flex-basis: auto; */
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 10px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.slaylist-card__owner {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.slaylist-card__date-created {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.slaylist-card__likes-container {
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0;
+}
+
+.slaylist-card__likes {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.slaylist-card__like-button {
+  background: transparent url("../../images/like-inactive.svg") center no-repeat;
+  border: none;
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0;
+  align-self: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slaylist-card__like-button_active {
+  background: transparent url("../../images/like-active.svg") center no-repeat;
+}
+
+.slaylist-card__like-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .slaylist-card__owner {
+    /* font-size: 10px; */
+    font-size: 0.7rem;
+  }
+
+  .slaylist-card__date-created {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .slaylist-card {
+    max-width: (90%, 400px);
+  }
+
+  .slaylist-card__tagline {
+    font-size: 0.9rem;
+    white-space: wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to display before truncating */
+  }
+
+  .slaylist-card__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to display before truncating */
+    -webkit-box-orient: vertical;
+  }
+
+  .slaylist-card__source-info-container {
+    display: none;
+  }
+
+  .slaylist-card__likes {
+    display: none;
+    /* font-size: 1rem; */
+    /* I need to figure out how to make them align the right way every time */
+  }
+
+  .slaylist-card__like-button {
+    /* width: 0.8rem;
+    height: 0.8rem; */
+    width: 1.5em;
+    height: 1.5em;
+    /* z-index: 1; */
+  }
+
+  .slaylist-card__like-button_active {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
