@@ -1,3 +1,8 @@
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.slaylist.csproject.org"
+    : "http://localhost:3000";
+
 const tempCurrentUser = "ampersand";
 
 const topSlaylists = [
@@ -158,4 +163,4 @@ const defaultChannels = [
 
 // // module.exports = { topSlaylists, defaultChannels };
 
-module.exports = { topSlaylists, defaultChannels, tempCurrentUser };
+module.exports = { baseUrl, topSlaylists, defaultChannels, tempCurrentUser };
